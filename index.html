@@ -7,437 +7,434 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 /* ══════════════════════════════════════════
-   THEME TOKENS — per-slide color palettes
+   UNIFIED CALM PALETTE — all derived from cover stone/warm tones
+   Cover is stone-warm. Every slide is a tonal variation:
+   same family, different temperature/depth.
 ══════════════════════════════════════════ */
 :root {
   --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
   --ease-out:    cubic-bezier(0.22,1,0.36,1);
 }
 
-/* stone (cover) */
-[data-theme="stone"] {
-  --bg-a:#0f0f0e; --bg-b:#1c1b19; --bg-c:#242320;
-  --grad: radial-gradient(ellipse 110% 70% at 65% 10%, #5a544840 0%, transparent 60%),
-          radial-gradient(ellipse 70% 90% at 10% 85%, #2a281e25 0%, transparent 55%),
-          linear-gradient(150deg,#0f0f0e 0%,#1c1b19 55%,#242320 100%);
-  --accent:#c9b99a; --accent2:#e2d5be; --glow:#c9b99a40;
-  --text:#f0ece5; --text-mid:#a89e90; --text-faint:#5c554d;
-  --border:rgba(201,185,154,0.18); --glass:rgba(255,255,255,0.05);
-  --glass-border:rgba(255,255,255,0.1); --tag-bg:rgba(201,185,154,0.12);
-  --card-hover:rgba(255,255,255,0.08);
+/* 01 · stone-warm (Cover) */
+[data-theme="s01"] {
+  --bg-a:#0f0e0c; --bg-b:#1a1815; --bg-c:#22201c;
+  --grad: radial-gradient(ellipse 120% 70% at 60% 5%, #c9b99a28 0%, transparent 55%),
+          radial-gradient(ellipse 80% 90% at 5% 90%, #8a7a5a18 0%, transparent 55%),
+          linear-gradient(158deg,#0f0e0c 0%,#1a1815 55%,#22201c 100%);
+  --accent:#c9b99a; --accent2:#e2d5be; --glow:#c9b99a38;
+  --text:#f0ece5; --text-mid:#a89e8e; --text-faint:#5a5248;
+  --border:rgba(201,185,154,0.16); --glass:rgba(201,185,154,0.04);
+  --glass-border:rgba(201,185,154,0.12); --tag-bg:rgba(201,185,154,0.1);
+  --card-hover:rgba(201,185,154,0.07);
 }
-/* blue */
-[data-theme="blue"] {
-  --bg-a:#060c18; --bg-b:#0d1a2e; --bg-c:#102038;
-  --grad: radial-gradient(ellipse 110% 70% at 70% 10%, #1a4fa040 0%, transparent 60%),
-          radial-gradient(ellipse 80% 100% at 5% 85%, #05183530 0%, transparent 55%),
-          linear-gradient(155deg,#060c18 0%,#0d1a2e 55%,#102038 100%);
-  --accent:#4d9de0; --accent2:#7bbcee; --glow:#4d9de050;
-  --text:#e6f0fa; --text-mid:#8ab8de; --text-faint:#3a6a90;
-  --border:rgba(77,157,224,0.18); --glass:rgba(77,157,224,0.06);
-  --glass-border:rgba(77,157,224,0.18); --tag-bg:rgba(77,157,224,0.14);
-  --card-hover:rgba(77,157,224,0.1);
+/* 02 · warm amber */
+[data-theme="s02"] {
+  --bg-a:#130f09; --bg-b:#201810; --bg-c:#2a2016;
+  --grad: radial-gradient(ellipse 110% 65% at 70% 8%, #d4943228 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #7c4c1820 0%, transparent 55%),
+          linear-gradient(155deg,#130f09 0%,#201810 55%,#2a2016 100%);
+  --accent:#d4943a; --accent2:#e8b86a; --glow:#d4943a42;
+  --text:#f5ede0; --text-mid:#c09868; --text-faint:#6e5030;
+  --border:rgba(212,148,58,0.16); --glass:rgba(212,148,58,0.05);
+  --glass-border:rgba(212,148,58,0.14); --tag-bg:rgba(212,148,58,0.1);
+  --card-hover:rgba(212,148,58,0.08);
 }
-/* teal */
-[data-theme="teal"] {
-  --bg-a:#041214; --bg-b:#081f22; --bg-c:#0c282c;
-  --grad: radial-gradient(ellipse 110% 70% at 70% 10%, #0e7d8040 0%, transparent 60%),
-          radial-gradient(ellipse 80% 100% at 5% 90%, #04282c30 0%, transparent 55%),
-          linear-gradient(155deg,#041214 0%,#081f22 55%,#0c282c 100%);
-  --accent:#2cb8c0; --accent2:#60d8de; --glow:#2cb8c050;
-  --text:#e0f4f5; --text-mid:#72c8cc; --text-faint:#2a6c70;
-  --border:rgba(44,184,192,0.18); --glass:rgba(44,184,192,0.06);
-  --glass-border:rgba(44,184,192,0.18); --tag-bg:rgba(44,184,192,0.14);
-  --card-hover:rgba(44,184,192,0.1);
+/* 03 · deep taupe */
+[data-theme="s03"] {
+  --bg-a:#0e0d0c; --bg-b:#1c1a18; --bg-c:#262320;
+  --grad: radial-gradient(ellipse 100% 60% at 65% 10%, #b0a08828 0%, transparent 55%),
+          radial-gradient(ellipse 70% 85% at 10% 85%, #60584820 0%, transparent 55%),
+          linear-gradient(152deg,#0e0d0c 0%,#1c1a18 55%,#262320 100%);
+  --accent:#b8a888; --accent2:#d4c4a8; --glow:#b8a88835;
+  --text:#eee8e0; --text-mid:#9e9080; --text-faint:#585048;
+  --border:rgba(184,168,136,0.15); --glass:rgba(184,168,136,0.04);
+  --glass-border:rgba(184,168,136,0.12); --tag-bg:rgba(184,168,136,0.09);
+  --card-hover:rgba(184,168,136,0.07);
 }
-/* sand */
-[data-theme="sand"] {
-  --bg-a:#100e08; --bg-b:#1e1b12; --bg-c:#28241a;
-  --grad: radial-gradient(ellipse 110% 70% at 65% 10%, #a08c5040 0%, transparent 60%),
-          radial-gradient(ellipse 80% 100% at 10% 90%, #4a3c1830 0%, transparent 55%),
-          linear-gradient(155deg,#100e08 0%,#1e1b12 55%,#28241a 100%);
-  --accent:#d4a84b; --accent2:#e8c878; --glow:#d4a84b50;
-  --text:#f5efe0; --text-mid:#c4a878; --text-faint:#6e5a38;
-  --border:rgba(212,168,75,0.18); --glass:rgba(212,168,75,0.06);
-  --glass-border:rgba(212,168,75,0.18); --tag-bg:rgba(212,168,75,0.14);
-  --card-hover:rgba(212,168,75,0.1);
+/* 04 · sand gold */
+[data-theme="s04"] {
+  --bg-a:#100e08; --bg-b:#1e1b10; --bg-c:#282418;
+  --grad: radial-gradient(ellipse 110% 65% at 68% 8%, #c8a03830 0%, transparent 55%),
+          radial-gradient(ellipse 80% 90% at 5% 90%, #6e5a1820 0%, transparent 55%),
+          linear-gradient(155deg,#100e08 0%,#1e1b10 55%,#282418 100%);
+  --accent:#c8a038; --accent2:#e0c060; --glow:#c8a03845;
+  --text:#f5f0e0; --text-mid:#c0a860; --text-faint:#6a5a28;
+  --border:rgba(200,160,56,0.16); --glass:rgba(200,160,56,0.05);
+  --glass-border:rgba(200,160,56,0.14); --tag-bg:rgba(200,160,56,0.1);
+  --card-hover:rgba(200,160,56,0.08);
 }
-/* green */
-[data-theme="green"] {
-  --bg-a:#061209; --bg-b:#0d2010; --bg-c:#142818;
-  --grad: radial-gradient(ellipse 110% 70% at 65% 10%, #2d7d3240 0%, transparent 60%),
-          radial-gradient(ellipse 80% 100% at 5% 90%, #0a3d1030 0%, transparent 55%),
-          linear-gradient(155deg,#061209 0%,#0d2010 55%,#142818 100%);
-  --accent:#4caf6e; --accent2:#82d4a0; --glow:#4caf6e50;
-  --text:#e8f5ec; --text-mid:#92c9a4; --text-faint:#3d6e4c;
-  --border:rgba(76,175,110,0.18); --glass:rgba(76,175,110,0.06);
-  --glass-border:rgba(76,175,110,0.18); --tag-bg:rgba(76,175,110,0.14);
-  --card-hover:rgba(76,175,110,0.1);
+/* 05 · warm slate */
+[data-theme="s05"] {
+  --bg-a:#0d0f10; --bg-b:#181c1e; --bg-c:#202428;
+  --grad: radial-gradient(ellipse 110% 65% at 65% 8%, #8aa0b028 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #304050 20 0%, transparent 55%),
+          linear-gradient(155deg,#0d0f10 0%,#181c1e 55%,#202428 100%);
+  --accent:#90a8b8; --accent2:#b0c8d8; --glow:#90a8b838;
+  --text:#e8eef2; --text-mid:#88a0b0; --text-faint:#405060;
+  --border:rgba(144,168,184,0.16); --glass:rgba(144,168,184,0.05);
+  --glass-border:rgba(144,168,184,0.13); --tag-bg:rgba(144,168,184,0.1);
+  --card-hover:rgba(144,168,184,0.08);
 }
-/* plum */
-[data-theme="plum"] {
-  --bg-a:#100a18; --bg-b:#1c1028; --bg-c:#241532;
-  --grad: radial-gradient(ellipse 110% 70% at 65% 10%, #5a1a9040 0%, transparent 60%),
-          radial-gradient(ellipse 80% 100% at 10% 90%, #28083c30 0%, transparent 55%),
-          linear-gradient(155deg,#100a18 0%,#1c1028 55%,#241532 100%);
-  --accent:#9b6cd4; --accent2:#c09ae8; --glow:#9b6cd450;
-  --text:#f0eaf8; --text-mid:#b490d8; --text-faint:#5a3a80;
-  --border:rgba(155,108,212,0.18); --glass:rgba(155,108,212,0.06);
-  --glass-border:rgba(155,108,212,0.18); --tag-bg:rgba(155,108,212,0.14);
-  --card-hover:rgba(155,108,212,0.1);
+/* 06 · deep umber */
+[data-theme="s06"] {
+  --bg-a:#110c0a; --bg-b:#1e1510; --bg-c:#281c16;
+  --grad: radial-gradient(ellipse 110% 65% at 68% 8%, #a07050 28 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #58301820 0%, transparent 55%),
+          linear-gradient(155deg,#110c0a 0%,#1e1510 55%,#281c16 100%);
+  --accent:#c08870; --accent2:#d8a888; --glow:#c0887040;
+  --text:#f0e8e0; --text-mid:#b88868; --text-faint:#705040;
+  --border:rgba(192,136,112,0.16); --glass:rgba(192,136,112,0.05);
+  --glass-border:rgba(192,136,112,0.13); --tag-bg:rgba(192,136,112,0.1);
+  --card-hover:rgba(192,136,112,0.08);
 }
-/* rose */
-[data-theme="rose"] {
-  --bg-a:#150810; --bg-b:#22101c; --bg-c:#2c1424;
-  --grad: radial-gradient(ellipse 110% 70% at 65% 10%, #9e2d5040 0%, transparent 60%),
-          radial-gradient(ellipse 80% 100% at 10% 90%, #4a102030 0%, transparent 55%),
-          linear-gradient(155deg,#150810 0%,#22101c 55%,#2c1424 100%);
-  --accent:#e0607c; --accent2:#f0909f; --glow:#e0607c50;
-  --text:#f5eaee; --text-mid:#d4909f; --text-faint:#7a3a4a;
-  --border:rgba(224,96,124,0.18); --glass:rgba(224,96,124,0.06);
-  --glass-border:rgba(224,96,124,0.18); --tag-bg:rgba(224,96,124,0.14);
-  --card-hover:rgba(224,96,124,0.1);
+/* 07 · muted sage */
+[data-theme="s07"] {
+  --bg-a:#0b0e0c; --bg-b:#141a16; --bg-c:#1c2420;
+  --grad: radial-gradient(ellipse 110% 65% at 65% 8%, #78a08028 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #305040 20 0%, transparent 55%),
+          linear-gradient(155deg,#0b0e0c 0%,#141a16 55%,#1c2420 100%);
+  --accent:#88b890; --accent2:#a8d0b0; --glow:#88b89038;
+  --text:#e4f0e8; --text-mid:#80a888; --text-faint:#385840;
+  --border:rgba(136,184,144,0.15); --glass:rgba(136,184,144,0.05);
+  --glass-border:rgba(136,184,144,0.12); --tag-bg:rgba(136,184,144,0.1);
+  --card-hover:rgba(136,184,144,0.08);
 }
-/* warm */
-[data-theme="warm"] {
-  --bg-a:#1a0e08; --bg-b:#2d1a10; --bg-c:#3d2318;
-  --grad: radial-gradient(ellipse 120% 80% at 70% 20%, #c0523040 0%, transparent 60%),
-          radial-gradient(ellipse 80% 100% at 10% 80%, #7c1d0830 0%, transparent 55%),
-          linear-gradient(160deg,#1a0e08 0%,#2d1a10 50%,#3d2318 100%);
-  --accent:#e8643a; --accent2:#f0a070; --glow:#e8643a55;
-  --text:#f5ece6; --text-mid:#c4a898; --text-faint:#7a5e54;
-  --border:rgba(232,100,58,0.18); --glass:rgba(232,100,58,0.06);
-  --glass-border:rgba(232,100,58,0.18); --tag-bg:rgba(232,100,58,0.14);
-  --card-hover:rgba(232,100,58,0.1);
+/* 08 · cool ash */
+[data-theme="s08"] {
+  --bg-a:#0c0c0e; --bg-b:#181820; --bg-c:#202028;
+  --grad: radial-gradient(ellipse 110% 65% at 68% 8%, #9090c028 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #40405820 0%, transparent 55%),
+          linear-gradient(155deg,#0c0c0e 0%,#181820 55%,#202028 100%);
+  --accent:#9898c8; --accent2:#b8b8e0; --glow:#9898c838;
+  --text:#e8e8f4; --text-mid:#9090b8; --text-faint:#484868;
+  --border:rgba(152,152,200,0.15); --glass:rgba(152,152,200,0.05);
+  --glass-border:rgba(152,152,200,0.12); --tag-bg:rgba(152,152,200,0.1);
+  --card-hover:rgba(152,152,200,0.08);
+}
+/* 09 · warm rose-stone */
+[data-theme="s09"] {
+  --bg-a:#110c0e; --bg-b:#1e1418; --bg-c:#281820;
+  --grad: radial-gradient(ellipse 110% 65% at 65% 8%, #c09098 28 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #6030 3820 0%, transparent 55%),
+          linear-gradient(155deg,#110c0e 0%,#1e1418 55%,#281820 100%);
+  --accent:#c09098; --accent2:#d8b0b8; --glow:#c0909838;
+  --text:#f0e8ec; --text-mid:#b08888; --text-faint:#684848;
+  --border:rgba(192,144,152,0.15); --glass:rgba(192,144,152,0.05);
+  --glass-border:rgba(192,144,152,0.12); --tag-bg:rgba(192,144,152,0.1);
+  --card-hover:rgba(192,144,152,0.08);
+}
+/* 10 · deep warm brown */
+[data-theme="s10"] {
+  --bg-a:#100e0a; --bg-b:#1c1810; --bg-c:#262018;
+  --grad: radial-gradient(ellipse 110% 65% at 68% 8%, #b89060 28 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #604830 20 0%, transparent 55%),
+          linear-gradient(155deg,#100e0a 0%,#1c1810 55%,#262018 100%);
+  --accent:#b89060; --accent2:#d0b080; --glow:#b8906040;
+  --text:#f0e8d8; --text-mid:#a88050; --text-faint:#604830;
+  --border:rgba(184,144,96,0.15); --glass:rgba(184,144,96,0.05);
+  --glass-border:rgba(184,144,96,0.12); --tag-bg:rgba(184,144,96,0.1);
+  --card-hover:rgba(184,144,96,0.08);
+}
+/* 11 · stone-blue */
+[data-theme="s11"] {
+  --bg-a:#0a0e12; --bg-b:#141c24; --bg-c:#1c2430;
+  --grad: radial-gradient(ellipse 110% 65% at 65% 8%, #6888a830 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #28384820 0%, transparent 55%),
+          linear-gradient(155deg,#0a0e12 0%,#141c24 55%,#1c2430 100%);
+  --accent:#6888a8; --accent2:#88a8c8; --glow:#6888a838;
+  --text:#e0e8f4; --text-mid:#7090a8; --text-faint:#384858;
+  --border:rgba(104,136,168,0.16); --glass:rgba(104,136,168,0.05);
+  --glass-border:rgba(104,136,168,0.13); --tag-bg:rgba(104,136,168,0.1);
+  --card-hover:rgba(104,136,168,0.08);
+}
+/* 12 · warm charcoal */
+[data-theme="s12"] {
+  --bg-a:#0d0c0a; --bg-b:#1a1816; --bg-c:#222020;
+  --grad: radial-gradient(ellipse 100% 60% at 62% 8%, #c0b09828 0%, transparent 55%),
+          radial-gradient(ellipse 70% 85% at 8% 88%, #5a504020 0%, transparent 55%),
+          linear-gradient(153deg,#0d0c0a 0%,#1a1816 55%,#222020 100%);
+  --accent:#c0b098; --accent2:#d8c8b0; --glow:#c0b09835;
+  --text:#eeeae4; --text-mid:#9e9080; --text-faint:#545048;
+  --border:rgba(192,176,152,0.15); --glass:rgba(192,176,152,0.04);
+  --glass-border:rgba(192,176,152,0.12); --tag-bg:rgba(192,176,152,0.09);
+  --card-hover:rgba(192,176,152,0.07);
+}
+/* 13 · warm olive */
+[data-theme="s13"] {
+  --bg-a:#0c0e0a; --bg-b:#181c12; --bg-c:#22261a;
+  --grad: radial-gradient(ellipse 110% 65% at 65% 8%, #a0b070 28 0%, transparent 55%),
+          radial-gradient(ellipse 75% 90% at 8% 88%, #50602820 0%, transparent 55%),
+          linear-gradient(155deg,#0c0e0a 0%,#181c12 55%,#22261a 100%);
+  --accent:#a0b070; --accent2:#c0d090; --glow:#a0b07038;
+  --text:#ecf0e0; --text-mid:#90a060; --text-faint:#485828;
+  --border:rgba(160,176,112,0.15); --glass:rgba(160,176,112,0.05);
+  --glass-border:rgba(160,176,112,0.12); --tag-bg:rgba(160,176,112,0.1);
+  --card-hover:rgba(160,176,112,0.08);
+}
+/* 14 · rich stone (last slide) */
+[data-theme="s14"] {
+  --bg-a:#0e0d0c; --bg-b:#1c1a18; --bg-c:#252220;
+  --grad: radial-gradient(ellipse 120% 70% at 60% 5%, #d4c8b030 0%, transparent 55%),
+          radial-gradient(ellipse 80% 90% at 5% 90%, #8a7a5a20 0%, transparent 55%),
+          linear-gradient(158deg,#0e0d0c 0%,#1c1a18 55%,#252220 100%);
+  --accent:#d4c8b0; --accent2:#e8e0cc; --glow:#d4c8b040;
+  --text:#f2ede8; --text-mid:#b0a898; --text-faint:#605850;
+  --border:rgba(212,200,176,0.16); --glass:rgba(212,200,176,0.04);
+  --glass-border:rgba(212,200,176,0.12); --tag-bg:rgba(212,200,176,0.09);
+  --card-hover:rgba(212,200,176,0.07);
+}
+/* 15 · warm stone (last) */
+[data-theme="s15"] {
+  --bg-a:#0f0d0b; --bg-b:#1d1a15; --bg-c:#26221c;
+  --grad: radial-gradient(ellipse 120% 70% at 62% 5%, #c8b89030 0%, transparent 55%),
+          radial-gradient(ellipse 80% 90% at 5% 90%, #80681820 0%, transparent 55%),
+          linear-gradient(158deg,#0f0d0b 0%,#1d1a15 55%,#26221c 100%);
+  --accent:#c8b890; --accent2:#e0d0b0; --glow:#c8b89038;
+  --text:#f0ece4; --text-mid:#a89878; --text-faint:#5a4e38;
+  --border:rgba(200,184,144,0.16); --glass:rgba(200,184,144,0.04);
+  --glass-border:rgba(200,184,144,0.12); --tag-bg:rgba(200,184,144,0.09);
+  --card-hover:rgba(200,184,144,0.07);
 }
 
 /* ══════════════════════════════════════════
    RESET + BASE
 ══════════════════════════════════════════ */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-}
+body { font-family:'Outfit',sans-serif; overflow:hidden; height:100vh; width:100vw; }
 
 /* ══════════════════════════════════════════
-   BACKGROUND LAYER — smooth theme transition
+   BACKGROUND
 ══════════════════════════════════════════ */
 #bgLayer {
-  position: fixed; inset: 0;
-  z-index: 0;
-  transition: background 0.9s var(--ease-out);
+  position:fixed; inset:0; z-index:0;
+  transition:background 1s var(--ease-out);
+  /* default */
+  background:linear-gradient(158deg,#0f0e0c,#1a1815,#22201c);
 }
-#bgLayer[data-theme="stone"]{ background: radial-gradient(ellipse 110% 70% at 65% 10%,#5a544840 0%,transparent 60%),radial-gradient(ellipse 70% 90% at 10% 85%,#2a281e25 0%,transparent 55%),linear-gradient(150deg,#0f0f0e 0%,#1c1b19 55%,#242320 100%); }
-#bgLayer[data-theme="blue"]  { background: radial-gradient(ellipse 110% 70% at 70% 10%,#1a4fa040 0%,transparent 60%),radial-gradient(ellipse 80% 100% at 5% 85%,#05183530 0%,transparent 55%),linear-gradient(155deg,#060c18 0%,#0d1a2e 55%,#102038 100%); }
-#bgLayer[data-theme="teal"]  { background: radial-gradient(ellipse 110% 70% at 70% 10%,#0e7d8040 0%,transparent 60%),radial-gradient(ellipse 80% 100% at 5% 90%,#04282c30 0%,transparent 55%),linear-gradient(155deg,#041214 0%,#081f22 55%,#0c282c 100%); }
-#bgLayer[data-theme="sand"]  { background: radial-gradient(ellipse 110% 70% at 65% 10%,#a08c5040 0%,transparent 60%),radial-gradient(ellipse 80% 100% at 10% 90%,#4a3c1830 0%,transparent 55%),linear-gradient(155deg,#100e08 0%,#1e1b12 55%,#28241a 100%); }
-#bgLayer[data-theme="green"] { background: radial-gradient(ellipse 110% 70% at 65% 10%,#2d7d3240 0%,transparent 60%),radial-gradient(ellipse 80% 100% at 5% 90%,#0a3d1030 0%,transparent 55%),linear-gradient(155deg,#061209 0%,#0d2010 55%,#142818 100%); }
-#bgLayer[data-theme="plum"]  { background: radial-gradient(ellipse 110% 70% at 65% 10%,#5a1a9040 0%,transparent 60%),radial-gradient(ellipse 80% 100% at 10% 90%,#28083c30 0%,transparent 55%),linear-gradient(155deg,#100a18 0%,#1c1028 55%,#241532 100%); }
-#bgLayer[data-theme="rose"]  { background: radial-gradient(ellipse 110% 70% at 65% 10%,#9e2d5040 0%,transparent 60%),radial-gradient(ellipse 80% 100% at 10% 90%,#4a102030 0%,transparent 55%),linear-gradient(155deg,#150810 0%,#22101c 55%,#2c1424 100%); }
-#bgLayer[data-theme="warm"]  { background: radial-gradient(ellipse 120% 80% at 70% 20%,#c0523040 0%,transparent 60%),radial-gradient(ellipse 80% 100% at 10% 80%,#7c1d0830 0%,transparent 55%),linear-gradient(160deg,#1a0e08 0%,#2d1a10 50%,#3d2318 100%); }
-
-/* noise grain */
 #bgLayer::after {
-  content:'';
-  position:fixed; inset:0;
+  content:''; position:fixed; inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  background-size:200px 200px;
-  opacity:0.35;
-  pointer-events:none;
+  background-size:200px 200px; opacity:0.38; pointer-events:none;
 }
 
 /* ══════════════════════════════════════════
    PROGRESS BAR
 ══════════════════════════════════════════ */
-.progress-rail {
-  position:fixed; top:0; left:0; right:0; height:2px; z-index:200;
-  background:rgba(255,255,255,0.06);
-}
-.progress-fill {
-  height:100%;
-  background:var(--accent,#c9b99a);
-  box-shadow:0 0 12px var(--glow,#c9b99a40);
-  transition: width 0.7s var(--ease-out), background 0.9s, box-shadow 0.9s;
-}
+.progress-rail { position:fixed; top:0; left:0; right:0; height:2px; z-index:200; background:rgba(255,255,255,0.05); }
+.progress-fill { height:100%; transition:width 0.7s var(--ease-out); }
 
 /* ══════════════════════════════════════════
    SLIDES
 ══════════════════════════════════════════ */
 .slides-wrapper {
-  position:relative; z-index:10;
-  width:100%; height:100vh;
+  position:relative; z-index:10; width:100%; height:100vh;
   display:flex; align-items:center; justify-content:center;
 }
-
 .slide {
-  display:none;
-  width:90%; max-width:1100px;
-  max-height:88vh;
-  overflow-y:auto;
-  scrollbar-width:thin;
-  scrollbar-color:rgba(255,255,255,0.15) transparent;
-  /* theme vars applied via data-theme on each slide */
+  display:none; width:90%; max-width:1100px; max-height:88vh;
+  overflow-y:auto; scrollbar-width:thin; scrollbar-color:rgba(255,255,255,0.12) transparent;
 }
-.slide::-webkit-scrollbar { width:4px; }
-.slide::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.15); border-radius:4px; }
-
+.slide::-webkit-scrollbar { width:3px; }
+.slide::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.12); border-radius:4px; }
 .slide.active { display:block; }
-
-/* ENTER animation classes */
-.slide.enter-right { animation: enterFromRight 0.55s var(--ease-spring) both; }
-.slide.enter-left  { animation: enterFromLeft  0.55s var(--ease-spring) both; }
-
-@keyframes enterFromRight {
-  from { opacity:0; transform: translateX(60px) scale(0.97); }
-  to   { opacity:1; transform: translateX(0)     scale(1); }
-}
-@keyframes enterFromLeft {
-  from { opacity:0; transform: translateX(-60px) scale(0.97); }
-  to   { opacity:1; transform: translateX(0)      scale(1); }
-}
+.slide.enter-right { animation:enterR 0.52s var(--ease-spring) both; }
+.slide.enter-left  { animation:enterL 0.52s var(--ease-spring) both; }
+@keyframes enterR { from{opacity:0;transform:translateX(56px) scale(0.97)} to{opacity:1;transform:none} }
+@keyframes enterL { from{opacity:0;transform:translateX(-56px) scale(0.97)} to{opacity:1;transform:none} }
 
 /* ══════════════════════════════════════════
-   GLASS CARD
+   GLASS
 ══════════════════════════════════════════ */
 .glass {
-  background: var(--glass, rgba(255,255,255,0.05));
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1.5px solid var(--glass-border, rgba(255,255,255,0.1));
-  border-radius: 24px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 0 var(--glow);
-  transition: box-shadow 0.4s ease;
+  background:var(--glass,rgba(255,255,255,0.04));
+  backdrop-filter:blur(28px); -webkit-backdrop-filter:blur(28px);
+  border:1.5px solid var(--glass-border,rgba(255,255,255,0.09));
+  border-radius:24px;
+  box-shadow:0 8px 40px rgba(0,0,0,0.45);
 }
 
 /* ══════════════════════════════════════════
    STAGGER FADEUP
 ══════════════════════════════════════════ */
-.fu { opacity:0; transform:translateY(22px); }
-.slide.active .fu { animation: fuAnim 0.5s var(--ease-out) forwards; }
-.slide.active .fu:nth-child(1) { animation-delay:.05s; }
-.slide.active .fu:nth-child(2) { animation-delay:.12s; }
-.slide.active .fu:nth-child(3) { animation-delay:.19s; }
-.slide.active .fu:nth-child(4) { animation-delay:.26s; }
-.slide.active .fu:nth-child(5) { animation-delay:.32s; }
-.slide.active .fu:nth-child(6) { animation-delay:.38s; }
-.slide.active .fu:nth-child(7) { animation-delay:.44s; }
-.slide.active .fu:nth-child(8) { animation-delay:.49s; }
-
-@keyframes fuAnim {
-  to { opacity:1; transform:translateY(0); }
-}
+.fu { opacity:0; transform:translateY(20px); }
+.slide.active .fu { animation:fuA 0.48s var(--ease-out) forwards; }
+.slide.active .fu:nth-child(1){animation-delay:.04s}
+.slide.active .fu:nth-child(2){animation-delay:.10s}
+.slide.active .fu:nth-child(3){animation-delay:.17s}
+.slide.active .fu:nth-child(4){animation-delay:.24s}
+.slide.active .fu:nth-child(5){animation-delay:.30s}
+.slide.active .fu:nth-child(6){animation-delay:.36s}
+.slide.active .fu:nth-child(7){animation-delay:.42s}
+.slide.active .fu:nth-child(8){animation-delay:.47s}
+@keyframes fuA { to{opacity:1;transform:none} }
 
 /* ══════════════════════════════════════════
    SLIDE HEADER
 ══════════════════════════════════════════ */
-.slide-header {
-  padding:36px 44px 24px;
-  margin-bottom:20px;
-}
+.slide-header { padding:34px 44px 22px; margin-bottom:18px; }
 .slide-label {
-  display:inline-flex; align-items:center; gap:8px;
-  font-size:11px; font-weight:700; letter-spacing:2.5px;
-  text-transform:uppercase;
-  padding:5px 14px; border-radius:20px; margin-bottom:14px;
-  background:var(--tag-bg); border:1px solid var(--border);
-  color:var(--accent);
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:10.5px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  padding:5px 13px; border-radius:20px; margin-bottom:13px;
+  background:var(--tag-bg); border:1px solid var(--border); color:var(--accent);
 }
-.slide-title {
-  font-size:clamp(24px,3.5vw,40px); font-weight:800;
-  color:var(--text); line-height:1.12; letter-spacing:-0.5px;
-}
-.slide-subtitle {
-  font-size:14px; color:var(--text-mid); margin-top:8px; font-weight:400;
-}
+.slide-label svg { width:11px; height:11px; }
+.slide-title { font-size:clamp(22px,3.2vw,38px); font-weight:800; color:var(--text); line-height:1.12; letter-spacing:-0.5px; }
+.slide-subtitle { font-size:13.5px; color:var(--text-mid); margin-top:7px; font-weight:400; }
 
 /* ══════════════════════════════════════════
-   GRID LAYOUTS
+   GRID / LAYOUT
 ══════════════════════════════════════════ */
-.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:0 44px 36px; }
-.grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; padding:0 44px 36px; }
-.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:0 44px 36px; }
-.two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:0 44px 36px; }
+.grid-2  { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:0 44px 34px; }
+.grid-3  { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; padding:0 44px 34px; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:0 44px 34px; }
+.full-pad { padding:0 44px 34px; }
 
 /* ══════════════════════════════════════════
    INFO CARD
 ══════════════════════════════════════════ */
 .info-card {
-  background:var(--glass); border:1px solid var(--border);
-  border-radius:18px; padding:22px 24px;
-  backdrop-filter:blur(12px);
-  transition:transform 0.28s var(--ease-spring), box-shadow 0.28s ease, background 0.28s ease, border-color 0.28s ease;
-  cursor:default;
-  position:relative; overflow:hidden;
+  background:var(--glass); border:1px solid var(--border); border-radius:16px; padding:20px 22px;
+  backdrop-filter:blur(12px); transition:transform 0.28s var(--ease-spring),box-shadow 0.28s,background 0.28s,border-color 0.28s;
+  cursor:default; position:relative; overflow:hidden;
 }
 .info-card::before {
   content:''; position:absolute; top:0; left:0; right:0; height:2px;
-  background:linear-gradient(90deg, var(--accent), var(--accent2));
-  opacity:0.6;
-  transform:scaleX(0); transform-origin:left;
-  transition:transform 0.35s var(--ease-out);
+  background:linear-gradient(90deg,var(--accent),var(--accent2)); opacity:0.5;
+  transform:scaleX(0); transform-origin:left; transition:transform 0.34s var(--ease-out);
 }
-.info-card:hover {
-  transform:translateY(-5px) scale(1.01);
-  box-shadow:0 20px 40px rgba(0,0,0,0.3), 0 0 0 1px var(--border);
-  background:var(--card-hover);
-  border-color:var(--accent);
-}
+.info-card:hover { transform:translateY(-5px) scale(1.01); box-shadow:0 18px 38px rgba(0,0,0,0.32); background:var(--card-hover); border-color:var(--accent); }
 .info-card:hover::before { transform:scaleX(1); }
-
-.card-icon {
-  width:32px; height:32px; margin-bottom:12px;
-  color:var(--accent);
-  transition: transform 0.3s var(--ease-spring), color 0.3s;
-}
+.card-icon { width:30px; height:30px; margin-bottom:11px; color:var(--accent); transition:transform 0.3s var(--ease-spring); }
 .info-card:hover .card-icon { transform:scale(1.15) rotate(-5deg); }
-
-.card-title { font-size:14px; font-weight:700; color:var(--text); margin-bottom:8px; line-height:1.3; }
-.card-body  { font-size:13px; color:var(--text-mid); line-height:1.65; font-weight:400; }
+.card-title { font-size:13.5px; font-weight:700; color:var(--text); margin-bottom:7px; line-height:1.3; }
+.card-body  { font-size:12.5px; color:var(--text-mid); line-height:1.65; font-weight:400; }
 .card-body strong { color:var(--accent2); font-weight:600; }
+
+/* ══════════════════════════════════════════
+   SPECIALTY CARD (wider layout for notes)
+══════════════════════════════════════════ */
+.spec-card {
+  background:var(--glass); border:1px solid var(--border); border-radius:14px;
+  padding:18px 20px; margin-bottom:10px;
+  transition:transform 0.25s var(--ease-spring),border-color 0.25s,background 0.25s,box-shadow 0.25s;
+  position:relative; overflow:hidden; cursor:default;
+}
+.spec-card::after {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:2.5px;
+  background:linear-gradient(180deg,var(--accent),var(--accent2));
+  transform:scaleY(0); transform-origin:top; transition:transform 0.3s var(--ease-out);
+}
+.spec-card:hover { transform:translateX(5px); border-color:var(--accent); background:var(--card-hover); box-shadow:0 8px 24px rgba(0,0,0,0.28); }
+.spec-card:hover::after { transform:scaleY(1); }
+.spec-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+.spec-badge {
+  font-size:10px; font-weight:700; letter-spacing:1px; padding:3px 10px; border-radius:10px;
+  background:var(--tag-bg); border:1px solid var(--border); color:var(--accent); white-space:nowrap; flex-shrink:0;
+  transition:transform 0.2s var(--ease-spring);
+}
+.spec-card:hover .spec-badge { transform:scale(1.05); }
+.spec-name { font-size:14px; font-weight:700; color:var(--text); }
+.spec-allowed {
+  display:inline-flex; align-items:center; gap:5px;
+  font-size:10px; font-weight:700; letter-spacing:1px; padding:2px 9px; border-radius:9px; margin-left:auto;
+}
+.allowed-yes  { background:rgba(136,184,144,0.15); color:#88b890; border:1px solid rgba(136,184,144,0.3); }
+.allowed-cond { background:rgba(200,160,56,0.15);  color:#c8a038; border:1px solid rgba(200,160,56,0.3); }
+.allowed-no   { background:rgba(192,80,80,0.15);   color:#c05050; border:1px solid rgba(192,80,80,0.3); }
+.spec-notes { font-size:12px; color:var(--text-mid); line-height:1.6; }
+.spec-notes strong { color:var(--accent2); font-weight:600; }
+.spec-notes em { color:var(--text-faint); font-style:italic; }
+.note-row { display:flex; gap:8px; align-items:flex-start; margin-top:5px; }
+.note-row svg { width:12px; height:12px; color:var(--accent); flex-shrink:0; margin-top:2px; }
 
 /* ══════════════════════════════════════════
    BADGE / TAG
 ══════════════════════════════════════════ */
 .badge {
-  display:inline-block; padding:3px 10px; border-radius:12px;
-  font-size:11px; font-weight:700; margin:2px 2px 6px 0;
-  background:var(--tag-bg); color:var(--accent);
-  border:1px solid var(--border);
-  transition:transform 0.2s var(--ease-spring), background 0.2s;
+  display:inline-block; padding:3px 10px; border-radius:12px; font-size:11px; font-weight:700;
+  margin:2px 2px 6px 0; background:var(--tag-bg); color:var(--accent); border:1px solid var(--border);
+  transition:transform 0.2s var(--ease-spring),background 0.2s;
 }
 .badge:hover { transform:scale(1.08); background:var(--card-hover); }
 
 /* ══════════════════════════════════════════
    STEP LIST
 ══════════════════════════════════════════ */
-.step-list { padding:0 44px 36px; }
+.step-list { padding:0 44px 34px; }
 .step-item {
-  display:flex; align-items:flex-start; gap:16px;
-  padding:16px 20px; border-radius:14px;
-  background:var(--glass); border:1px solid var(--border);
-  margin-bottom:12px;
-  transition:transform 0.25s var(--ease-spring), border-color 0.25s, background 0.25s, box-shadow 0.25s;
+  display:flex; align-items:flex-start; gap:14px; padding:15px 18px; border-radius:13px;
+  background:var(--glass); border:1px solid var(--border); margin-bottom:10px;
+  transition:transform 0.25s var(--ease-spring),border-color 0.25s,background 0.25s,box-shadow 0.25s;
   position:relative; overflow:hidden;
 }
 .step-item::after {
   content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
-  background:linear-gradient(180deg, var(--accent), var(--accent2));
-  transform:scaleY(0); transform-origin:top;
-  transition:transform 0.35s var(--ease-out);
+  background:linear-gradient(180deg,var(--accent),var(--accent2));
+  transform:scaleY(0); transform-origin:top; transition:transform 0.32s var(--ease-out);
 }
-.step-item:hover {
-  transform:translateX(6px);
-  border-color:var(--accent);
-  background:var(--card-hover);
-  box-shadow:0 8px 24px rgba(0,0,0,0.25);
-}
+.step-item:hover { transform:translateX(6px); border-color:var(--accent); background:var(--card-hover); box-shadow:0 8px 22px rgba(0,0,0,0.25); }
 .step-item:hover::after { transform:scaleY(1); }
-
 .step-num {
-  min-width:36px; height:36px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-weight:800; font-size:15px; color:var(--bg-a,#0f0f0e); flex-shrink:0;
-  background:linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow:0 4px 12px var(--glow);
-  transition:transform 0.3s var(--ease-spring), box-shadow 0.3s;
+  min-width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:14px; color:var(--bg-a,#0f0e0c); flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 4px 10px var(--glow);
+  transition:transform 0.3s var(--ease-spring),box-shadow 0.3s;
 }
-.step-item:hover .step-num {
-  transform:scale(1.12) rotate(-8deg);
-  box-shadow:0 6px 20px var(--glow);
-}
-
-.step-title { font-size:14px; font-weight:700; color:var(--text); margin-bottom:4px; }
-.step-desc  { font-size:13px; color:var(--text-mid); line-height:1.55; }
+.step-item:hover .step-num { transform:scale(1.12) rotate(-8deg); box-shadow:0 6px 18px var(--glow); }
+.step-title { font-size:13.5px; font-weight:700; color:var(--text); margin-bottom:3px; }
+.step-desc  { font-size:12.5px; color:var(--text-mid); line-height:1.55; }
 
 /* ══════════════════════════════════════════
    SCRIPT BLOCK
 ══════════════════════════════════════════ */
 .script-block {
-  background:var(--glass); border:1px solid var(--border);
-  border-left:3px solid var(--accent);
-  border-radius:14px; padding:18px 22px;
-  margin:0 44px 14px;
-  font-size:13.5px; color:var(--text); line-height:1.72;
-  transition:border-color 0.25s, background 0.25s, transform 0.25s var(--ease-spring);
+  background:var(--glass); border:1px solid var(--border); border-left:3px solid var(--accent);
+  border-radius:13px; padding:17px 21px; margin:0 44px 13px;
+  font-size:13px; color:var(--text); line-height:1.72;
+  transition:border-color 0.25s,background 0.25s,transform 0.25s var(--ease-spring);
 }
-.script-block:hover {
-  border-left-color:var(--accent2);
-  background:var(--card-hover);
-  transform:translateX(4px);
-}
+.script-block:hover { border-left-color:var(--accent2); background:var(--card-hover); transform:translateX(4px); }
 .script-block strong { color:var(--accent2); font-weight:600; }
 .script-block em { color:var(--text-faint); font-style:italic; font-size:12px; }
-
-.script-note {
-  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-  color:var(--accent); display:flex; align-items:center; gap:6px;
-  margin-bottom:8px;
-}
-.script-note svg { width:14px; height:14px; }
-
+.script-note { font-size:10.5px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:6px; margin-bottom:8px; }
+.script-note svg { width:13px; height:13px; }
 .script-alt { border-left-color:var(--text-faint); }
 .script-alt .script-note { color:var(--text-faint); }
-.script-alt:hover { border-left-color:var(--text-mid); }
 
 /* ══════════════════════════════════════════
    TABLE
 ══════════════════════════════════════════ */
-.table-wrap { padding:0 44px 36px; }
+.table-wrap { padding:0 44px 34px; }
 table { width:100%; border-collapse:collapse; }
 thead tr { background:var(--glass); }
-th {
-  padding:12px 16px; text-align:left;
-  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-  color:var(--accent); border-bottom:1px solid var(--border);
-}
-td {
-  padding:12px 16px; font-size:13px; color:var(--text);
-  border-bottom:1px solid var(--border); font-weight:400;
-  transition:background 0.2s;
-}
+th { padding:11px 15px; text-align:left; font-size:10.5px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); border-bottom:1px solid var(--border); }
+td { padding:11px 15px; font-size:12.5px; color:var(--text); border-bottom:1px solid var(--border); font-weight:400; transition:background 0.2s; }
 tr { transition:background 0.2s; }
 tr:hover td { background:var(--card-hover); }
 .code-cell { font-weight:700; font-family:'Courier New',monospace; color:var(--accent); }
 
 /* ══════════════════════════════════════════
-   Q&A CARDS
+   Q&A
 ══════════════════════════════════════════ */
 .qa-card {
-  background:var(--glass); border:1px solid var(--border); border-radius:16px;
-  padding:18px 22px; margin:0 44px 12px;
-  transition:transform 0.25s var(--ease-spring), border-color 0.25s, background 0.25s, box-shadow 0.25s;
+  background:var(--glass); border:1px solid var(--border); border-radius:15px;
+  padding:17px 21px; margin:0 44px 11px;
+  transition:transform 0.25s var(--ease-spring),border-color 0.25s,background 0.25s,box-shadow 0.25s;
   position:relative; overflow:hidden;
 }
-.qa-card::before {
-  content:''; position:absolute; inset:0; border-radius:16px;
-  background:linear-gradient(135deg, var(--accent)08, transparent 60%);
-  opacity:0; transition:opacity 0.3s;
-}
-.qa-card:hover {
-  transform:translateY(-3px);
-  border-color:var(--accent);
-  background:var(--card-hover);
-  box-shadow:0 12px 30px rgba(0,0,0,0.3);
-}
-.qa-card:hover::before { opacity:1; }
-
-.qa-q {
-  font-size:13.5px; font-weight:700; color:var(--text);
-  margin-bottom:10px; display:flex; gap:10px; align-items:flex-start;
-}
+.qa-card:hover { transform:translateY(-3px); border-color:var(--accent); background:var(--card-hover); box-shadow:0 12px 28px rgba(0,0,0,0.28); }
+.qa-q { font-size:13px; font-weight:700; color:var(--text); margin-bottom:9px; display:flex; gap:10px; align-items:flex-start; }
 .qa-q-icon {
-  min-width:22px; height:22px; border-radius:50%;
-  background:linear-gradient(135deg, var(--accent), var(--accent2));
-  color:var(--bg-a,#0f0f0e); font-size:11px; font-weight:800;
+  min-width:21px; height:21px; border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:var(--bg-a,#0f0e0c); font-size:10.5px; font-weight:800;
   display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;
   transition:transform 0.3s var(--ease-spring);
 }
 .qa-card:hover .qa-q-icon { transform:scale(1.15) rotate(-8deg); }
-.qa-a { font-size:13px; color:var(--text-mid); line-height:1.65; padding-left:32px; }
+.qa-a { font-size:12.5px; color:var(--text-mid); line-height:1.65; padding-left:31px; }
 .qa-a li { margin-bottom:4px; }
 
 /* ══════════════════════════════════════════
@@ -445,185 +442,166 @@ tr:hover td { background:var(--card-hover); }
 ══════════════════════════════════════════ */
 .checklist { list-style:none; }
 .checklist li {
-  display:flex; gap:10px; align-items:flex-start;
-  padding:8px 0; border-bottom:1px solid var(--border);
-  font-size:13px; color:var(--text); line-height:1.5;
-  transition:color 0.2s, padding-left 0.2s;
+  display:flex; gap:9px; align-items:flex-start; padding:7px 0;
+  border-bottom:1px solid var(--border); font-size:12.5px; color:var(--text); line-height:1.5;
+  transition:color 0.2s,padding-left 0.2s;
 }
 .checklist li:last-child { border-bottom:none; }
 .checklist li:hover { padding-left:4px; color:var(--accent2); }
-.check-icon { color:var(--accent); flex-shrink:0; margin-top:2px; width:16px; height:16px; }
-.cross-icon { color:var(--accent); opacity:0.55; flex-shrink:0; margin-top:2px; width:16px; height:16px; }
+.check-icon { color:var(--accent); flex-shrink:0; margin-top:2px; width:15px; height:15px; }
+.cross-icon { color:var(--accent); opacity:0.5; flex-shrink:0; margin-top:2px; width:15px; height:15px; }
 
 /* ══════════════════════════════════════════
    HIGHLIGHT BOX
 ══════════════════════════════════════════ */
 .highlight-box {
-  margin:0 44px 18px; padding:16px 22px; border-radius:14px;
-  font-size:13.5px; font-weight:400; line-height:1.65;
-  background:var(--glass); border:1px solid var(--border);
+  margin:0 44px 16px; padding:15px 20px; border-radius:13px;
+  font-size:13px; line-height:1.65; background:var(--glass); border:1px solid var(--border);
   border-left:3px solid var(--accent); color:var(--text-mid);
-  display:flex; gap:12px; align-items:flex-start;
-  transition:background 0.25s, border-color 0.25s, transform 0.25s var(--ease-spring);
+  display:flex; gap:11px; align-items:flex-start;
+  transition:background 0.25s,border-color 0.25s,transform 0.25s var(--ease-spring);
 }
 .highlight-box:hover { background:var(--card-hover); border-color:var(--accent); transform:translateX(4px); }
 .highlight-box strong { color:var(--text); font-weight:600; }
-.highlight-box svg { width:18px; height:18px; color:var(--accent); flex-shrink:0; margin-top:2px; }
+.highlight-box svg { width:17px; height:17px; color:var(--accent); flex-shrink:0; margin-top:2px; }
+
+/* ══════════════════════════════════════════
+   ABBREV TABLE (two-col, compact)
+══════════════════════════════════════════ */
+.abbrev-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:0 44px 34px; }
+.abbrev-block { background:var(--glass); border:1px solid var(--border); border-radius:14px; padding:18px 20px; }
+.abbrev-title { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:12px; padding-bottom:9px; border-bottom:1px solid var(--border); }
+.abbrev-row { display:grid; grid-template-columns:80px 1fr; gap:0 12px; padding:6px 0; border-bottom:1px solid var(--border); font-size:12.5px; transition:background 0.15s; border-radius:4px; }
+.abbrev-row:last-child { border-bottom:none; }
+.abbrev-row:hover { background:var(--card-hover); }
+.abbrev-key { font-weight:700; color:var(--accent); font-family:'Courier New',monospace; font-size:12px; }
+.abbrev-val { color:var(--text-mid); }
+
+/* ══════════════════════════════════════════
+   DOC STRUCTURE
+══════════════════════════════════════════ */
+.doc-page-card {
+  background:var(--glass); border:1px solid var(--border); border-radius:13px; padding:16px 20px; margin-bottom:10px;
+  display:grid; grid-template-columns:36px 1fr; gap:0 14px; align-items:flex-start;
+  transition:transform 0.25s var(--ease-spring),border-color 0.25s,background 0.25s;
+  position:relative; overflow:hidden;
+}
+.doc-page-card:hover { transform:translateX(5px); border-color:var(--accent); background:var(--card-hover); }
+.doc-page-num {
+  width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent2)); color:var(--bg-a,#0f0e0c);
+  font-weight:800; font-size:13px; flex-shrink:0; box-shadow:0 3px 8px var(--glow);
+  transition:transform 0.3s var(--ease-spring);
+}
+.doc-page-card:hover .doc-page-num { transform:scale(1.12) rotate(-6deg); }
+.doc-page-title { font-size:13.5px; font-weight:700; color:var(--text); margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+.doc-page-desc  { font-size:12px; color:var(--text-mid); line-height:1.58; }
+.doc-page-desc strong { color:var(--accent2); font-weight:600; }
+.mandatory-tag {
+  font-size:9.5px; font-weight:700; letter-spacing:1px; padding:2px 8px; border-radius:8px;
+  background:rgba(136,184,144,0.15); color:#88b890; border:1px solid rgba(136,184,144,0.3);
+}
+.optional-tag {
+  font-size:9.5px; font-weight:700; letter-spacing:1px; padding:2px 8px; border-radius:8px;
+  background:rgba(200,160,56,0.12); color:#c8a038; border:1px solid rgba(200,160,56,0.28);
+}
 
 /* ══════════════════════════════════════════
    SECTION TITLE
 ══════════════════════════════════════════ */
-.section-title {
-  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
-  color:var(--accent); padding:0 44px 10px; opacity:0.8;
-}
+.section-title { font-size:10.5px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); padding:0 44px 9px; opacity:0.75; }
 
 /* ══════════════════════════════════════════
-   COVER SLIDE
+   COVER
 ══════════════════════════════════════════ */
-.cover-inner { padding:52px 56px 48px; text-align:center; }
-.cover-logo {
-  font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase;
-  color:var(--accent); opacity:0.8; margin-bottom:28px;
-}
-.cover-title {
-  font-size:clamp(36px,5.5vw,64px); font-weight:900;
-  color:var(--text); line-height:1.05; letter-spacing:-1.5px; margin-bottom:16px;
-}
+.cover-inner { padding:50px 54px 46px; text-align:center; }
+.cover-logo { font-size:11.5px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); opacity:0.75; margin-bottom:26px; }
+.cover-title { font-size:clamp(34px,5.2vw,62px); font-weight:900; color:var(--text); line-height:1.05; letter-spacing:-1.5px; margin-bottom:14px; }
 .cover-title span { color:var(--accent); }
-.cover-subtitle {
-  font-size:16px; color:var(--text-mid); margin-bottom:40px; font-weight:400;
-}
-.cover-grid {
-  display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:32px;
-}
+.cover-subtitle { font-size:15px; color:var(--text-mid); margin-bottom:36px; font-weight:400; }
+.cover-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; margin-top:30px; }
 .cover-chip {
-  background:var(--glass); border:1px solid var(--border); border-radius:16px;
-  padding:18px 14px; font-size:13px; font-weight:600; color:var(--text);
-  text-align:center; cursor:default;
-  transition:transform 0.28s var(--ease-spring), border-color 0.28s, background 0.28s, box-shadow 0.28s;
+  background:var(--glass); border:1px solid var(--border); border-radius:15px;
+  padding:17px 13px; font-size:12.5px; font-weight:600; color:var(--text); text-align:center; cursor:default;
+  transition:transform 0.28s var(--ease-spring),border-color 0.28s,background 0.28s,box-shadow 0.28s;
   position:relative; overflow:hidden;
 }
 .cover-chip::before {
   content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
-  background:linear-gradient(90deg, var(--accent), var(--accent2));
-  transform:scaleX(0); transform-origin:left;
-  transition:transform 0.35s var(--ease-out);
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  transform:scaleX(0); transform-origin:left; transition:transform 0.34s var(--ease-out);
 }
-.cover-chip:hover {
-  transform:translateY(-6px) scale(1.03);
-  border-color:var(--accent);
-  background:var(--card-hover);
-  box-shadow:0 16px 32px rgba(0,0,0,0.35), 0 0 20px var(--glow);
-}
+.cover-chip:hover { transform:translateY(-6px) scale(1.03); border-color:var(--accent); background:var(--card-hover); box-shadow:0 16px 32px rgba(0,0,0,0.35),0 0 20px var(--glow); }
 .cover-chip:hover::before { transform:scaleX(1); }
-.chip-icon { width:28px; height:28px; color:var(--accent); margin:0 auto 10px; display:block;
-  transition:transform 0.3s var(--ease-spring); }
+.chip-icon { width:26px; height:26px; color:var(--accent); margin:0 auto 9px; display:block; transition:transform 0.3s var(--ease-spring); }
 .cover-chip:hover .chip-icon { transform:scale(1.2) rotate(-8deg); }
 
 /* ══════════════════════════════════════════
-   NAVIGATION PILL
+   NAV PILL
 ══════════════════════════════════════════ */
 .nav-pill {
-  position:fixed; bottom:26px; left:50%; transform:translateX(-50%);
-  z-index:200;
-  background:var(--glass,rgba(255,255,255,0.06));
-  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
-  border:1.5px solid var(--glass-border,rgba(255,255,255,0.12));
-  border-radius:50px; padding:10px 20px;
-  display:flex; align-items:center; gap:14px;
-  box-shadow:0 8px 32px rgba(0,0,0,0.4);
-  transition:border-color 0.9s;
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:200;
+  background:rgba(255,255,255,0.05); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border:1.5px solid rgba(255,255,255,0.1); border-radius:50px; padding:9px 18px;
+  display:flex; align-items:center; gap:13px; box-shadow:0 8px 30px rgba(0,0,0,0.45);
 }
 .nav-btn {
-  width:36px; height:36px; border-radius:50%; border:1px solid var(--border);
+  width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,0.12);
   cursor:pointer; display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.55);
   transition:all 0.2s var(--ease-spring);
-  background:var(--glass); color:var(--text-mid);
 }
-.nav-btn svg { width:16px; height:16px; transition:transform 0.2s var(--ease-spring); }
-.nav-btn:hover:not(:disabled) {
-  background:var(--card-hover); border-color:var(--accent);
-  color:var(--accent); transform:scale(1.12);
-  box-shadow:0 4px 12px var(--glow);
-}
+.nav-btn svg { width:15px; height:15px; transition:transform 0.2s var(--ease-spring); }
+.nav-btn:hover:not(:disabled) { background:var(--card-hover,rgba(255,255,255,0.09)); border-color:var(--accent,#c9b99a); color:var(--accent,#c9b99a); transform:scale(1.12); }
 .nav-btn:hover:not(:disabled) svg { transform:scale(1.15); }
-.nav-btn:disabled { opacity:0.3; cursor:default; }
-.nav-btn:active:not(:disabled) { transform:scale(0.95); }
-
-.nav-counter { font-size:12px; font-weight:600; color:var(--text-mid); min-width:48px; text-align:center; }
-
-.nav-dots { display:flex; gap:6px; align-items:center; }
+.nav-btn:disabled { opacity:0.25; cursor:default; }
+.nav-btn:active:not(:disabled) { transform:scale(0.94); }
+.nav-counter { font-size:11.5px; font-weight:600; color:rgba(255,255,255,0.45); min-width:46px; text-align:center; }
+.nav-dots { display:flex; gap:5px; align-items:center; }
 .nav-dot {
-  width:7px; height:7px; border-radius:50%;
-  background:var(--text-faint); cursor:pointer;
+  width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.2); cursor:pointer;
   transition:all 0.3s var(--ease-spring); border:none; padding:0;
 }
-.nav-dot.active {
-  background:var(--accent); width:22px; border-radius:4px;
-  box-shadow:0 0 8px var(--glow);
-}
-.nav-dot:hover:not(.active) { background:var(--text-mid); transform:scale(1.3); }
+.nav-dot.active { background:var(--accent,#c9b99a); width:20px; border-radius:3px; }
+.nav-dot:hover:not(.active) { background:rgba(255,255,255,0.4); transform:scale(1.3); }
 
 /* ══════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════ */
 @media (max-width:768px) {
-  .grid-2,.grid-3,.grid-4,.two-col,.cover-grid { grid-template-columns:1fr 1fr; }
-  .grid-4 { grid-template-columns:1fr 1fr; }
-  .slide-header,.script-block,.qa-card,.step-list,.table-wrap,
-  .two-col,.grid-2,.grid-3,.grid-4,.highlight-box,.section-title { padding-left:20px; padding-right:20px; }
+  .grid-2,.grid-3,.two-col,.abbrev-grid,.cover-grid { grid-template-columns:1fr 1fr; }
+  .slide-header,.script-block,.qa-card,.step-list,.table-wrap,.full-pad,
+  .two-col,.grid-2,.grid-3,.abbrev-grid,.highlight-box,.section-title { padding-left:20px; padding-right:20px; }
   .script-block,.qa-card,.highlight-box { margin-left:20px; margin-right:20px; }
-  .cover-inner { padding:32px 24px; }
+  .cover-inner { padding:30px 22px; }
 }
 </style>
 </head>
 <body>
 
-<div id="bgLayer" data-theme="stone"></div>
-
-<div class="progress-rail"><div class="progress-fill" id="progFill" style="width:9.09%"></div></div>
-
+<div id="bgLayer"></div>
+<div class="progress-rail"><div class="progress-fill" id="progFill"></div></div>
 <div class="slides-wrapper">
 
-<!-- ══════════════════════════════════════════
-     SLIDE 1 — COVER
-══════════════════════════════════════════ -->
-<div class="slide glass active" id="s0" data-theme="stone">
+<!-- ══ SLIDE 01 — COVER ══ -->
+<div class="slide glass active" id="s0" data-theme="s01">
   <div class="cover-inner">
     <div class="fu cover-logo">INCall Outsourcing</div>
     <div class="fu cover-title">DME Chasing<br/><span>Training Guide</span></div>
     <div class="fu cover-subtitle">Everything you need to chase, confirm, fax & follow up — organized for daily use.</div>
     <div class="fu cover-grid">
-      <div class="cover-chip">
-        <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M12 12v4"/><path d="M10 14h4"/></svg>
-        DME & Medicare Basics
-      </div>
-      <div class="cover-chip">
-        <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 21.83 16z"/></svg>
-        Call Scripts & Rebuttals
-      </div>
-      <div class="cover-chip">
-        <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-        HCPCS Codes
-      </div>
-      <div class="cover-chip">
-        <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        Common Cases & Fixes
-      </div>
+      <div class="cover-chip"><svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M12 12v4"/><path d="M10 14h4"/></svg>DME & Medicare Basics</div>
+      <div class="cover-chip"><svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.62 3.33A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 21.83 16z"/></svg>Call Scripts & Rebuttals</div>
+      <div class="cover-chip"><svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>HCPCS Codes</div>
+      <div class="cover-chip"><svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Doctor Specialties & Docs</div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 2 — DME BASICS
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s1" data-theme="blue">
+<!-- ══ SLIDE 02 — DME BASICS ══ -->
+<div class="slide glass" id="s1" data-theme="s02">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-      Foundation
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Foundation</div>
     <div class="fu slide-title">DME & Medical Insurance — The Basics</div>
     <div class="fu slide-subtitle">What we do, who we work with, and why Medicare Part B is our focus.</div>
   </div>
@@ -631,7 +609,7 @@ tr:hover td { background:var(--card-hover); }
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
       <div class="card-title">What is DME?</div>
-      <div class="card-body">Durable Medical Equipment — reusable devices prescribed for home use. Braces, wheelchairs, oxygen equipment, CPAP machines.</div>
+      <div class="card-body">Durable Medical Equipment — reusable medical devices prescribed for home use. Braces, wheelchairs, oxygen equipment, CPAP machines.</div>
     </div>
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -641,18 +619,18 @@ tr:hover td { background:var(--card-hover); }
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       <div class="card-title">Our Role</div>
-      <div class="card-body">Telemarketing agency. We generate and qualify complete leads, then hand them to suppliers. We do <strong>not</strong> supply the equipment.</div>
+      <div class="card-body">Telemarketing agency. We generate and qualify complete leads, then hand them to suppliers. We do <strong>not</strong> supply the equipment ourselves.</div>
     </div>
   </div>
   <div class="highlight-box fu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
-    <div><strong>Key Focus — Medicare Part B:</strong> Covers doctor visits, outpatient care, and DME (braces). Parts A, C, and D are <em style="color:var(--text-faint)">not relevant</em> to our process.</div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    <div><strong>Key Focus — Medicare Part B:</strong> Covers doctor visits, outpatient care, and DME (braces). Parts A, C, and D are not relevant to our process.</div>
   </div>
-  <div class="grid-2 fu" style="padding-top:0;">
+  <div class="grid-2 fu" style="padding-top:0">
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
       <div class="card-title">Insurance Types We Skip</div>
-      <div class="card-body">PPO, HMO, MSP, Medicaid-only, and Medicare Advantage (Part C). If any of these is the patient's primary — lead is not eligible.</div>
+      <div class="card-body">PPO, HMO, MSP, Medicaid-only, and Medicare Advantage (Part C). Any of these as primary = lead not eligible.</div>
     </div>
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -662,22 +640,17 @@ tr:hover td { background:var(--card-hover); }
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 3 — REQUIRED DATA
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s2" data-theme="teal">
+<!-- ══ SLIDE 03 — REQUIRED DATA ══ -->
+<div class="slide glass" id="s2" data-theme="s03">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      Lead Structure
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Lead Structure</div>
     <div class="fu slide-title">Required Information — Patient & Doctor</div>
     <div class="fu slide-subtitle">A lead = PT info + Doctor info. Both parts are mandatory. No exceptions.</div>
   </div>
   <div class="two-col fu">
     <div>
       <div class="section-title" style="padding-left:0">Patient (PT) Info</div>
-      <div class="step-list" style="padding:0 0 16px;">
+      <div class="step-list" style="padding:0 0 14px">
         <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">Full Name + DOB</div><div class="step-desc">First & last name. Date of birth used for identity confirmation on every call.</div></div></div>
         <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">MBI / MCN (Medicare ID)</div><div class="step-desc">11 alphanumeric characters. Example: <code style="color:var(--accent2);font-family:monospace">1EG4-TE5-MK73</code>. Required for billing.</div></div></div>
         <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">Physical Address</div><div class="step-desc">Must be a real street address. No PO Boxes. State & zip must match client criteria.</div></div></div>
@@ -686,10 +659,10 @@ tr:hover td { background:var(--card-hover); }
     </div>
     <div>
       <div class="section-title" style="padding-left:0">Doctor Info</div>
-      <div class="step-list" style="padding:0 0 16px;">
-        <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">Full Name + Phone + Fax</div><div class="step-desc">Doctor's first & last name. Direct fax number is critical — prior auth paperwork goes here.</div></div></div>
-        <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">NPI Number (Individual)</div><div class="step-desc">10-digit National Provider Identifier. Must be <strong>Individual NPI</strong> — not Organizational. Example: <code style="color:var(--accent2);font-family:monospace">1234567893</code>.</div></div></div>
-        <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">PECOS Enrollment</div><div class="step-desc">Must be enrolled in PECOS. Verify via Medicare NPI Registry. Not enrolled = claim denied.</div></div></div>
+      <div class="step-list" style="padding:0 0 14px">
+        <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">Full Name + Phone + Fax</div><div class="step-desc">Doctor's first & last name. Direct fax is critical — prior auth paperwork goes here.</div></div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">NPI Number (Individual)</div><div class="step-desc">10-digit identifier. Must be <strong>Individual NPI</strong> — not Organizational. Example: <code style="color:var(--accent2);font-family:monospace">1234567893</code>.</div></div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">PECOS Enrollment</div><div class="step-desc">Must be enrolled in PECOS. Verify via NPI Registry. Not enrolled = claim denied.</div></div></div>
         <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">Active State License</div><div class="step-desc">License must be valid and match the practice state. Expired or out-of-state = claim denial.</div></div></div>
       </div>
     </div>
@@ -700,15 +673,10 @@ tr:hover td { background:var(--card-hover); }
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 4 — BRACE CODES
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s3" data-theme="sand">
+<!-- ══ SLIDE 04 — BRACE CODES ══ -->
+<div class="slide glass" id="s3" data-theme="s04">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 12l3 3 7-7"/></svg>
-      Brace Codes
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 12l3 3 7-7"/></svg>Brace Codes</div>
     <div class="fu slide-title">Brace Abbreviations & HCPCS Codes</div>
     <div class="fu slide-subtitle">Always use exact codes. Wrong codes = claim denied.</div>
   </div>
@@ -717,7 +685,7 @@ tr:hover td { background:var(--card-hover); }
       <thead><tr><th>Code</th><th>Brace Type</th><th>HCPCS Code(s)</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td class="code-cell">BB</td><td>Back Brace</td><td><span class="badge">L0648</span><span class="badge">L0650</span><span class="badge">L0651</span></td><td>LSO – Lumbar-Sacral Orthosis</td></tr>
-        <tr><td class="code-cell">BKB</td><td>Both Knee Braces</td><td><span class="badge">L1833</span><span class="badge">L1843</span></td><td>RKB = Right, LKB = Left. KO = Knee Orthosis</td></tr>
+        <tr><td class="code-cell">BKB</td><td>Both Knee Braces</td><td><span class="badge">L1833</span><span class="badge">L1843</span></td><td>RKB = Right, LKB = Left</td></tr>
         <tr><td class="code-cell">BWB</td><td>Both Wrist Braces</td><td><span class="badge">L3908</span><span class="badge">L3916</span></td><td>WHO = Wrist-Hand Orthosis</td></tr>
         <tr><td class="code-cell">BAB</td><td>Both Ankle Braces</td><td><span class="badge">L1902</span><span class="badge">L1970</span></td><td style="color:var(--accent);font-weight:600">AFO — Requires shoe size!</td></tr>
         <tr><td class="code-cell">SB</td><td>Shoulder Brace</td><td><span class="badge">L3670</span><span class="badge">L3650</span></td><td>Prefabricated shoulder orthosis</td></tr>
@@ -733,169 +701,118 @@ tr:hover td { background:var(--card-hover); }
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 5 — FIRST CALL SCRIPTS
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s4" data-theme="green">
+<!-- ══ SLIDE 05 — FIRST CALL SCRIPTS ══ -->
+<div class="slide glass" id="s4" data-theme="s05">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 21.83 16z"/></svg>
-      Call Scripts
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.62 3.33A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 21.83 16z"/></svg>Call Scripts</div>
     <div class="fu slide-title">First Call — Confirming Mutuality</div>
     <div class="fu slide-subtitle">Speak slowly. Never leave an awkward silence. One second pause after the intro line.</div>
   </div>
   <div class="section-title fu">Opening</div>
   <div class="script-block fu">
-    <span class="script-note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07"/><path d="M2 2l20 20"/></svg>
-      Opening — Speak slowly, pause 1 second after intro
-    </span>
+    <span class="script-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2"/></svg>Opening — Speak slowly, pause 1 second after intro</span>
     "Hello, this is <strong>[Your Name]</strong> calling from <strong>Liberty Medical Supplies</strong>. I'm reaching out in regards to the mutual patient between us and Dr. <strong>[Doctor's Name]</strong>." <em>(1-second pause)</em><br/><br/>
     "The name of the patient is <strong>[Patient's Name]</strong> and the date of birth is <strong>[Patient's DOB]</strong>."
   </div>
   <div class="section-title fu">After Confirming Patient is Active</div>
   <div class="script-block fu">
-    <span class="script-note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      After Confirmation — Get the fax number
-    </span>
+    <span class="script-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>After Confirmation — Get the fax number</span>
     "Okay, so may I have the best fax number for the doctor? We need to send a prior authorization request for the patient that we need to be signed."
   </div>
   <div class="section-title fu">Closing — Based on GK Attitude</div>
   <div class="script-block fu">
-    <span class="script-note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-      If GK Was Friendly
-    </span>
+    <span class="script-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>If GK Was Friendly</span>
     "So by any chance, would the doctor be able to sign the paperwork by the end of the day?"
   </div>
   <div class="script-block script-alt fu">
-    <span class="script-note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-      If GK Wasn't Super Nice
-    </span>
+    <span class="script-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>If GK Wasn't Super Nice</span>
     "So roughly speaking, how long would it take for the provider to sign the paperwork?"
   </div>
   <div class="section-title fu">First Follow-Up</div>
   <div class="script-block fu">
-    <span class="script-note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.07-8.52"/></svg>
-      Follow-Up Call
-    </span>
-    "Hi, this is <strong>[Your Name]</strong> calling from Liberty Medical Supplies. I'm reaching out to follow up on a fax we sent on <strong>[Date Fax Was Sent]</strong>, and I'm just making sure it's been received successfully from your side."<br/><br/>
+    <span class="script-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.07-8.52"/></svg>Follow-Up Call</span>
+    "Hi, this is <strong>[Your Name]</strong> calling from Liberty Medical Supplies. I'm reaching out to follow up on a fax we sent on <strong>[Date Fax Was Sent]</strong>, just making sure it's been received from your side."<br/><br/>
     <em>Then confirm: patient name, DOB, and purpose of the request — same as before.</em>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 6 — VOICEMAIL SCRIPTS
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s5" data-theme="plum">
+<!-- ══ SLIDE 06 — VOICEMAIL ══ -->
+<div class="slide glass" id="s5" data-theme="s06">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Voicemail
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Voicemail</div>
     <div class="fu slide-title">Voicemail Scripts</div>
     <div class="fu slide-subtitle">Use voicemail only as a last option. Follow the steps after leaving the message.</div>
   </div>
   <div class="section-title fu">First Call Voicemail</div>
   <div class="script-block fu">
-    <span class="script-note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
-      First Call VM — Use only when no one answers
-    </span>
-    "Hi, my name is <strong>[Your Name]</strong> from Liberty Medical Supplies. I'm reaching out in regards to a mutual patient. The patient's name is <strong>[Patient's Name]</strong>, and their date of birth is <strong>[DOB]</strong>. I need to check if this patient is a current patient with Dr. <strong>[Doctor's Name]</strong>. Please call me as soon as you can, as it's urgent. My callback number is <strong>(331) 800-4684</strong>."
+    <span class="script-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>First Call VM — Use only when no one answers</span>
+    "Hi, my name is <strong>[Your Name]</strong> from Liberty Medical Supplies. I'm reaching out regarding a mutual patient. The patient's name is <strong>[Patient's Name]</strong>, date of birth <strong>[DOB]</strong>. I need to check if this patient is a current patient with Dr. <strong>[Doctor's Name]</strong>. Please call me as soon as you can, as it's urgent. My callback number is <strong>(331) 800-4684</strong>."
   </div>
   <div class="section-title fu">Follow-Up Voicemail</div>
   <div class="script-block fu">
-    <span class="script-note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.07-8.52"/></svg>
-      Follow-Up VM — Include fax number and request
-    </span>
-    "Hi, my name is <strong>[Your Name]</strong> from Liberty Medical Supplies. I'm reaching out regarding a fax I sent to Dr. <strong>[Doctor's Name]</strong> for a mutual patient. The patient's name is <strong>[Patient's Name]</strong>, and their date of birth is <strong>[DOB]</strong>. If you received it, I kindly request the provider's signature along with the most recent office notes, faxed back to us at <strong>(888) 627-0067</strong>. For questions, please call me at <strong>(331) 800-4684</strong>. Thank you, and have a blessed day."
+    <span class="script-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.07-8.52"/></svg>Follow-Up VM — Include fax number and request</span>
+    "Hi, my name is <strong>[Your Name]</strong> from Liberty Medical Supplies. I'm reaching out regarding a fax I sent to Dr. <strong>[Doctor's Name]</strong> for a mutual patient, <strong>[Patient's Name]</strong>, DOB <strong>[DOB]</strong>. If received, I kindly request the provider's signature along with the most recent office notes, faxed back to us at <strong>(888) 627-0067</strong>. For questions, call me at <strong>(331) 800-4684</strong>. Thank you, and have a blessed day."
   </div>
   <div class="highlight-box fu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-    <div><strong>Critical VM Steps:</strong> (1) Leave message clearly. (2) Wait for IVR/automated system to finish. (3) Press the required number to save VM. (4) Only hang up after completing step 3 — hanging up early = VM not received.</div>
+    <div><strong>Critical VM Steps:</strong> (1) Leave message clearly. (2) Wait for IVR to finish. (3) Press the required number to save VM. (4) Only hang up after completing step 3 — hanging up early = VM not received.</div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 7 — REBUTTALS
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s6" data-theme="rose">
+<!-- ══ SLIDE 07 — REBUTTALS ══ -->
+<div class="slide glass" id="s6" data-theme="s07">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Rebuttals
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Rebuttals</div>
     <div class="fu slide-title">Common Objections & How to Handle Them</div>
     <div class="fu slide-subtitle">Stay professional. Redirect, don't argue. Always aim to get the fax number.</div>
   </div>
   <div class="fu">
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"Who are you with again?"</div><div class="qa-a">"With Liberty Medical Supplies. This call is regarding a prior authorization request we need to send to the doctor."</div></div>
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"What medical supplies are you requesting?"</div><div class="qa-a">"The order was placed for <strong>[requested braces]</strong>." — Then if asked who placed it: "It was placed by Mr./Mrs. <strong>[Patient's Name]</strong>."</div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"What medical supplies are you requesting?"</div><div class="qa-a">"The order was placed for <strong>[requested braces]</strong>." — If asked who placed it: "It was placed by Mr./Mrs. <strong>[Patient's Name]</strong>."</div></div>
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"The doctor wouldn't be able to authorize such an order."</div><div class="qa-a">"It's totally fine — we're not seeking a signature. We're looking for the supervision of the doctor on the paperwork, regardless of what it is."</div></div>
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"We cannot confirm whether the patient is active."</div><div class="qa-a">"Totally fine. We're just making sure the prior authorization is addressed correctly to the right physician. But anyways — can you provide me with the best fax number?"</div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"We cannot confirm whether the patient is active."</div><div class="qa-a">"Totally fine. We're just making sure the prior authorization is addressed correctly to the right physician. But anyways — can you provide the best fax number?"</div></div>
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"Who ordered the brace?"</div><div class="qa-a">"The patient requested the brace and was referred to their doctor for evaluation. A medical provider must sign before anything can be dispensed, per HIPAA requirements."</div></div>
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"How did the patient reach you / did you call the patient?"</div><div class="qa-a">"According to our system, the patient contacted us regarding this order. We are a third-party provider — orders are placed by the patient, usually under the guidance of their PCP or another doctor."</div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">Q</div>"How did the patient reach you / did you call the patient?"</div><div class="qa-a">"According to our system, the patient contacted us. We are a third-party provider — orders are placed by the patient, usually under the guidance of their PCP or another doctor."</div></div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 8 — COMMON CASES 1
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s7" data-theme="warm">
+<!-- ══ SLIDE 08 — CASES 1 ══ -->
+<div class="slide glass" id="s7" data-theme="s08">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-      Common Cases — Part 1
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Common Cases — Part 1</div>
     <div class="fu slide-title">Real Situations & Best Responses</div>
     <div class="fu slide-subtitle">Scenarios you'll face daily — handle them with confidence.</div>
   </div>
   <div class="fu">
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Doctor is on vacation.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ask if a covering doctor or PA can sign instead.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>If not, note when the doctor is back and chase another doctor in the meantime.</li></ul></div></div>
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Doctor treats area X, but brace is for area Y.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Explain the patient requested braces for both — ask if they can sign for the area they treat.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Always verify before faxing if the doctor covers the specific area.</li></ul></div></div>
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Fax sent but no response after multiple follow-ups.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Try medical records or nurse directly. Leave a message noting urgency.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Follow up for 2–3 weeks. If still nothing → escalate, look for another doctor.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Stress urgency politely — ask them to remind the doctor to sign and return.</li></ul></div></div>
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Patient not active with this doctor — no other doctors listed.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ask GK if patient was referred elsewhere.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Call the patient directly — introduce as calling from a doctor's office, not a supply company.</li></ul></div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Fax sent but no response after multiple follow-ups.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Try medical records or nurse directly. Leave a message noting urgency.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Follow up for 2–3 weeks. If still nothing → escalate, look for another doctor.</li></ul></div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Patient not active with this doctor — no other doctors listed.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ask GK if patient was referred elsewhere.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Call the patient directly — introduce as from a doctor's office, not a supply company.</li></ul></div></div>
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Office says they didn't receive the fax.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ask for an alternative fax or email. Try other departments.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Offer to resend while they're on the line.</li></ul></div></div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 9 — COMMON CASES 2
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s8" data-theme="teal">
+<!-- ══ SLIDE 09 — CASES 2 ══ -->
+<div class="slide glass" id="s8" data-theme="s09">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-      Common Cases — Part 2
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Common Cases — Part 2</div>
     <div class="fu slide-title">More Scenarios & Solutions</div>
     <div class="fu slide-subtitle">Edge cases that require extra care — stay consistent.</div>
   </div>
   <div class="fu">
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>GK says there's no mention of a brace in the chart.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Explain the patient requested it recently — may not have been discussed in prior visits.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ask if the provider can evaluate the patient and add a diagnosis. Offer to resend paperwork.</li></ul></div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>GK says no mention of a brace in the chart.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Explain the patient requested it recently — may not have come up in prior visits.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ask if the provider can evaluate and add a diagnosis. Offer to resend paperwork.</li></ul></div></div>
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>GK says patient didn't request the brace.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Agree they can confirm with the patient. Once confirmed, offer to resend paperwork.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Leave the lead 2 days, call back trying a different GK. Pursue other doctors in parallel.</li></ul></div></div>
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Doctor signed but chart notes are missing.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Contact medical records directly — state you have a signed order and need supporting docs.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>If needed, call another doctor and explain the situation to obtain compliant documentation.</li></ul></div></div>
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>GK refuses to provide any info — including fax number.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Call back later and try a different GK or doctor directly.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Search the fax number online for that office.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Call back asking only for the fax, without a full intro.</li></ul></div></div>
-    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Patient is now seeing a PA — not the original doctor.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>If form already sent: ask office to forward it to the PA. Note their name + NPI.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>If form not sent yet: request the PA's fax number and send directly.</li></ul></div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>GK refuses to provide any info — including fax number.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Call back later and try a different GK or doctor directly.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Search the fax number online. Call back asking only for the fax, no full intro.</li></ul></div></div>
+    <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>Patient is now seeing a PA — not the original doctor.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>If form already sent: ask office to forward to PA. Note their name + NPI.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>If form not sent yet: request the PA's fax number and send directly.</li></ul></div></div>
     <div class="qa-card"><div class="qa-q"><div class="qa-q-icon">!</div>GK says paperwork must go to PCP or specialist.</div><div class="qa-a"><ul class="checklist"><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ask for the PCP's name and send directly to them.</li><li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>If PCP denied it, explain the patient referred you to this doctor as part of their treatment plan.</li></ul></div></div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 10 — CHECKLIST
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s9" data-theme="green">
+<!-- ══ SLIDE 10 — PRE-CHASE CHECKLIST ══ -->
+<div class="slide glass" id="s9" data-theme="s10">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      Pre-Chase Checklist
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Pre-Chase Checklist</div>
     <div class="fu slide-title">Data Validation Before Calling</div>
     <div class="fu slide-subtitle">Run every lead through these checks before contacting the doctor's office.</div>
   </div>
@@ -933,34 +850,29 @@ tr:hover td { background:var(--card-hover); }
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
     <div><strong>Once all checks pass</strong> and the lead is marked "Good & Eligible" → proceed to Active Chasing Phase. Contact the doctor's office by phone and/or fax to obtain physician signature.</div>
   </div>
-  <div class="grid-3 fu" style="padding-top:0;">
+  <div class="grid-3 fu" style="padding-top:0">
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <div class="card-title">NPI Registry</div>
-      <div class="card-body">Use to verify PECOS enrollment quickly. Also confirms individual vs. organizational provider type.</div>
+      <div class="card-body">Verify PECOS enrollment quickly. Also confirms individual vs. organizational provider type.</div>
     </div>
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       <div class="card-title">State Medical Board</div>
-      <div class="card-body">For direct validation of doctor license status, expiration date, and state authorization.</div>
+      <div class="card-body">Direct validation of license status, expiration date, and state authorization.</div>
     </div>
     <div class="info-card">
       <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
       <div class="card-title">CRM / Internal DB</div>
-      <div class="card-body">Track provider license status, flag non-compliant doctors, and maintain detailed clinic information.</div>
+      <div class="card-body">Track provider license status, flag non-compliant doctors, and maintain clinic details.</div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 11 — PROCESS FLOW
-══════════════════════════════════════════ -->
-<div class="slide glass" id="s10" data-theme="blue">
+<!-- ══ SLIDE 11 — PROCESS FLOW ══ -->
+<div class="slide glass" id="s10" data-theme="s11">
   <div class="slide-header">
-    <div class="fu slide-label">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      Workflow
-    </div>
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Workflow</div>
     <div class="fu slide-title">The Full Chasing Process — Step by Step</div>
     <div class="fu slide-subtitle">From receiving a lead to getting a signed order. Every step matters.</div>
   </div>
@@ -969,22 +881,262 @@ tr:hover td { background:var(--card-hover); }
     <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">First Call — Confirm Mutuality</div><div class="step-desc">Call the doctor's office. Confirm the patient is active. Introduce as Liberty Medical Supplies. Get the fax number. Ask about signing timeline.</div></div></div>
     <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">Send the Fax (Prior Auth Request)</div><div class="step-desc">Fax the prior authorization paperwork to the confirmed fax number. Log the exact date and time of transmission.</div></div></div>
     <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">Follow-Up Calls (Every 1–2 Days)</div><div class="step-desc">Check if fax was received. Ask for signature status. If no response after 2–3 weeks → escalate. Try other departments or another doctor.</div></div></div>
-    <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">Obtain Signed DO + Chart Notes</div><div class="step-desc">Doctor's Order must be signed. Most cases also require recent office/chart notes showing medical necessity. Request from medical records if needed.</div></div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">Obtain Signed DO + Chart Notes (CN)</div><div class="step-desc">Doctor's Order must be signed. Most cases also require recent office/chart notes (CN) showing medical necessity. Request from medical records if needed.</div></div></div>
     <div class="step-item"><div class="step-num">6</div><div class="step-content"><div class="step-title">Submit to Processing</div><div class="step-desc">Signed DO + chart notes received → file moves to Processing for final submission to the supplier and Medicare billing.</div></div></div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 12 — MENTALITY + ABBREVIATIONS ══ -->
+<div class="slide glass" id="s11" data-theme="s12">
+  <div class="slide-header">
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Session 2 — Communication & Abbreviations</div>
+    <div class="fu slide-title">Professional Mindset & Key Abbreviations</div>
+    <div class="fu slide-subtitle">How to carry yourself on the phone, and every abbreviation you need to know.</div>
+  </div>
+  <div class="grid-3 fu">
+    <div class="info-card">
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="card-title">Business-to-Business Tone</div>
+      <div class="card-body">We speak <strong>office-to-office</strong>, not as salespeople. We are a professional medical coordination office supporting the doctor's practice. Polite, confident, direct.</div>
+    </div>
+    <div class="info-card">
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      <div class="card-title">Upper-Hand Position</div>
+      <div class="card-body">Approach every call with confidence — you are assisting the doctor in providing necessary DME for their patient. This is standard medical coordination, <strong>not a sales pitch</strong>.</div>
+    </div>
+    <div class="info-card">
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div class="card-title">The Goal on Every Call</div>
+      <div class="card-body">Efficiently request the doctor's <strong>signature on required documentation</strong> for patient care. Get the fax, send the paper, follow up until signed.</div>
+    </div>
+  </div>
+  <div class="abbrev-grid fu">
+    <div class="abbrev-block">
+      <div class="abbrev-title">Medical Abbreviations</div>
+      <div class="abbrev-row"><span class="abbrev-key">PCP</span><span class="abbrev-val">Primary Care Physician</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">DO</span><span class="abbrev-val">Doctor Order <em style="color:var(--accent);font-size:11px">(Core Doc)</em></span></div>
+      <div class="abbrev-row"><span class="abbrev-key">CN</span><span class="abbrev-val">Chart Notes / Office Notes <em style="color:var(--accent);font-size:11px">(Mandatory)</em></span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Dx</span><span class="abbrev-val">Diagnosis</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Rx</span><span class="abbrev-val">Prescription</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">MD</span><span class="abbrev-val">Medical Doctor</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">NP</span><span class="abbrev-val">Nurse Practitioner</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">PA</span><span class="abbrev-val">Physician Assistant</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">DPM</span><span class="abbrev-val">Podiatrist (foot doctor)</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">PT</span><span class="abbrev-val">Physical Therapist (not allowed)</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">OT</span><span class="abbrev-val">Occupational Therapist (not allowed)</span></div>
+    </div>
+    <div class="abbrev-block">
+      <div class="abbrev-title">Postal / Address Abbreviations</div>
+      <div class="abbrev-row"><span class="abbrev-key">St</span><span class="abbrev-val">Street</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Ave</span><span class="abbrev-val">Avenue</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Blvd</span><span class="abbrev-val">Boulevard</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Rd</span><span class="abbrev-val">Road</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Ln</span><span class="abbrev-val">Lane</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Ct</span><span class="abbrev-val">Court</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Pkwy</span><span class="abbrev-val">Parkway</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Apt</span><span class="abbrev-val">Apartment</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Ste</span><span class="abbrev-val">Suite</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">Bldg</span><span class="abbrev-val">Building</span></div>
+      <div class="abbrev-row"><span class="abbrev-key">N/S/E/W</span><span class="abbrev-val">Compass directions + NE/NW/SE/SW</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 13 — DOCTOR SPECIALTIES (RICH NOTES) ══ -->
+<div class="slide glass" id="s12" data-theme="s13">
+  <div class="slide-header">
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Acceptable Specialties</div>
+    <div class="fu slide-title">Doctor Specialties — Who Can Sign</div>
+    <div class="fu slide-subtitle">Know what each specialty treats, when they're valid, and why — before you fax.</div>
+  </div>
+  <div class="full-pad fu">
+    <!-- PRIMARY / GREEN -->
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">PCP</span>
+        <span class="spec-name">Primary Care / Family Medicine / Internal Medicine</span>
+        <span class="spec-allowed allowed-yes"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Accepted</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>In the US, the PCP (also called "family doctor" or "general practitioner") is usually the <strong>first point of contact</strong> for patients. They manage overall health, refer to specialists, and see patients regularly for chronic conditions — making them one of our most valuable sign sources.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Treats:</strong> General health, chronic conditions (diabetes, hypertension, arthritis, back pain), preventive care. They commonly treat patients who need back, knee, wrist, or ankle braces.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><em>Internal Medicine physicians</em> specialize in adult diseases (18+). In practice, they function like PCPs and are fully valid for DME orders.</span></div>
+      </div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">Ortho</span>
+        <span class="spec-name">Orthopedic Doctor / Orthopedic Surgeon</span>
+        <span class="spec-allowed allowed-yes"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Accepted</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Treats:</strong> Bones, joints, muscles, tendons, ligaments, and spine. This is the <strong>strongest specialty</strong> for our product category. They directly treat the exact body parts our braces support — knees, back, shoulders, wrists, ankles, elbows, hips.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Medicare and insurers fully accept orthopedic orders for braces. An ortho referral on the chart is a strong medical necessity indicator. <em>Important: verify they treat the specific joint in question before faxing.</em></span></div>
+      </div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">Sports Med</span>
+        <span class="spec-name">Sports Medicine</span>
+        <span class="spec-allowed allowed-yes"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Accepted</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Treats:</strong> Musculoskeletal injuries, joint pain, sprains, strains, overuse injuries. Very valid for knee, ankle, wrist, and shoulder braces. Sports medicine doctors also treat <em>non-athletes</em> — many older Medicare patients visit them for joint pain management.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Often works alongside orthopedics. Accepted by Medicare for DME orders when they're the treating provider for the relevant condition.</span></div>
+      </div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">Pain Mgmt</span>
+        <span class="spec-name">Pain Management</span>
+        <span class="spec-allowed allowed-yes"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Accepted</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Treats:</strong> Chronic pain conditions — back pain, neck pain, joint pain, nerve pain (neuropathy). Very relevant for BB (back brace), NB (neck brace), and knee braces.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Pain management physicians actively document patient complaints in chart notes — making their CN (chart notes) especially useful. If the patient sees pain management, chart notes often clearly state the diagnosis and pain levels needed for Medicare medical necessity.</span></div>
+      </div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">Neuro / Rheum</span>
+        <span class="spec-name">Neurology / Rheumatology</span>
+        <span class="spec-allowed allowed-yes"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Accepted</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Neurology treats:</strong> Nerve conditions, neuropathy, MS, Parkinson's, radiculopathy (nerve root compression). Back and ankle braces are often prescribed for patients with nerve damage affecting mobility or stability.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Rheumatology treats:</strong> Arthritis (RA, OA), lupus, gout, fibromyalgia, joint inflammation. Extremely relevant for knee, wrist, and ankle braces. Rheumatologists frequently treat Medicare patients with chronic joint conditions.</span></div>
+      </div>
+    </div>
+    <!-- MID-LEVEL -->
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">NP / PA</span>
+        <span class="spec-name">Nurse Practitioner / Physician Assistant</span>
+        <span class="spec-allowed allowed-cond"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Conditional</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span><strong>Allowed ONLY if</strong> they work in orthopedic, sports medicine, or musculoskeletal practices. Medicare recognizes NPs and PAs as eligible ordering providers for DME if they have prescriptive authority in their state and are PECOS-enrolled.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><em>Not suitable if they work in:</em> Diabetes clinics, cardiology, mental health, or any practice unrelated to musculoskeletal conditions. The specialty of their <strong>supervising physician / practice</strong> matters — always verify.</span></div>
+      </div>
+    </div>
+    <!-- CONDITIONAL -->
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">DPM</span>
+        <span class="spec-name">Podiatry (DPM — Doctor of Podiatric Medicine)</span>
+        <span class="spec-allowed allowed-cond"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Foot/Ankle Only</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Treats:</strong> Foot and ankle conditions exclusively — bunions, plantar fasciitis, heel pain, ankle instability, diabetic foot complications. Common in the US, especially among diabetic Medicare patients.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span><strong>Only valid for BAB (Both Ankle Braces)</strong> — L1902/L1970. Cannot sign for knee, back, wrist, or any other brace. If the patient has a podiatrist listed but needs a back brace, you need a different doctor.</span></div>
+      </div>
+    </div>
+    <!-- DENIED -->
+    <div class="spec-card">
+      <div class="spec-header">
+        <span class="spec-badge">PT / OT / Chiro</span>
+        <span class="spec-name">Physical Therapists, Occupational Therapists, Chiropractors</span>
+        <span class="spec-allowed allowed-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Not Allowed</span>
+      </div>
+      <div class="spec-notes">
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><strong>Medicare does not recognize these providers as eligible to order DME.</strong> A chiropractor (DC — Doctor of Chiropractic) is licensed to adjust the spine but is <em>not a medical doctor</em> and cannot prescribe or order Medicare-billable DME. Same applies to PT and OT.</span></div>
+        <div class="note-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Even if a PT or chiropractor signs a form, the claim will be <strong>denied by Medicare</strong>. Never pursue these providers as signatories. If the patient only sees a chiropractor, ask if they have a PCP or orthopedic doctor.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 14 — DOCUMENT STRUCTURE ══ -->
+<div class="slide glass" id="s13" data-theme="s14">
+  <div class="slide-header">
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Document Structure</div>
+    <div class="fu slide-title">Documents We Send & What They Contain</div>
+    <div class="fu slide-subtitle">Every package must start with a Cover Page. Know each page before you send.</div>
+  </div>
+  <div class="full-pad fu">
+    <div class="doc-page-card">
+      <div class="doc-page-num">1</div>
+      <div><div class="doc-page-title">Cover Page <span class="mandatory-tag">Always First</span></div><div class="doc-page-desc">Introduces the request and summarizes the patient. This is the first page the office sees — must be clean, professional, and clearly identify the patient and requesting provider.</div></div>
+    </div>
+    <div class="doc-page-card">
+      <div class="doc-page-num">2</div>
+      <div><div class="doc-page-title">RX / DO — Doctor Order (Prescription) <span class="mandatory-tag">Core · Must Sign</span></div><div class="doc-page-desc">The core document. Contains two main boxes: <strong>Patient Information</strong> and <strong>Doctor Information</strong>. The Diagnosis section only needs: (a) affected area/joints (e.g., Both Ankles, Lower Back) and (b) the L-Code for the specific brace version (e.g., L0456). This is the document the doctor signs.</div></div>
+    </div>
+    <div class="doc-page-card">
+      <div class="doc-page-num">3</div>
+      <div><div class="doc-page-title">Medical Necessity <span class="optional-tag">Optional</span></div><div class="doc-page-desc">Additional diagnosis/supporting page that elaborates on why the brace is medically necessary. Can be signed but is not mandatory. Helps reinforce the claim if chart notes are thin.</div></div>
+    </div>
+    <div class="doc-page-card">
+      <div class="doc-page-num">4</div>
+      <div><div class="doc-page-title">Addendum <span class="optional-tag">Optional</span></div><div class="doc-page-desc">Extra supporting documentation. Can be signed but not mandatory. Provides additional context for complex or multi-brace orders.</div></div>
+    </div>
+    <div class="doc-page-card">
+      <div class="doc-page-num">5</div>
+      <div><div class="doc-page-title">CN — Chart Notes / Clinical Notes <span class="mandatory-tag">Mandatory</span></div><div class="doc-page-desc">Must be received alongside the signed RX/DO. Must have an <strong>active/recent date</strong> (within 5 months and 10 days). Should clearly document the patient's pain and condition. Request from medical records if not received with the signed DO.</div></div>
+    </div>
+  </div>
+  <div class="highlight-box fu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <div>Both the <strong>signed DO</strong> and the <strong>CN (Chart Notes)</strong> are required to complete the order. Incomplete or outdated documents will be rejected by the client.</div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 15 — ACCEPTANCE CRITERIA ══ -->
+<div class="slide glass" id="s14" data-theme="s15">
+  <div class="slide-header">
+    <div class="fu slide-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Client Acceptance Criteria</div>
+    <div class="fu slide-title">Document Rules — What the Client Requires</div>
+    <div class="fu slide-subtitle">These are hard rules. Anything outside these limits gets rejected — no exceptions.</div>
+  </div>
+  <div class="two-col fu">
+    <div>
+      <div class="section-title" style="padding-left:0">Doctor Order (DO / RX)</div>
+      <div class="step-list" style="padding:0 0 14px">
+        <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">Good Quality</div><div class="step-desc">Must be received clearly — no cutting, no interruptions, fully legible. Blurry or cut-off signatures are rejected.</div></div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">Signed Date Within 2 Months</div><div class="step-desc">The date the doctor signs the DO must be within the last 2 months (maximum). Older signatures = automatic rejection.</div></div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">All Information Correct</div><div class="step-desc">Patient info, doctor info, L-codes, and diagnosis must all be accurate. No wrong submissions — even small errors cause rejection.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-title" style="padding-left:0">Chart Notes (CN)</div>
+      <div class="step-list" style="padding:0 0 14px">
+        <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">Visit Date Within 5 Months + 10 Days</div><div class="step-desc">The date of the office visit documented in the chart notes must be within 5 months and 10 days. Older notes = rejected.</div></div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">Clear Diagnosis Present</div><div class="step-desc">Must contain a clear diagnosis regarding the patient's pain or complaint. Vague notes like "patient visit" without a specific condition are not accepted.</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-box fu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    <div><strong>Summary:</strong> DO signed within 2 months · CN dated within 5 months 10 days · both documents clear and complete · all info accurate. Meet all criteria → order moves to processing. Miss any one → rejection.</div>
+  </div>
+  <div class="grid-3 fu" style="padding-top:0">
+    <div class="info-card">
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div class="card-title">DO Date Limit</div>
+      <div class="card-body">Max <strong>2 months</strong> from the date the doctor signed. If a lead has been chasing too long, the signature may expire — request a re-sign.</div>
+    </div>
+    <div class="info-card">
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <div class="card-title">CN Date Limit</div>
+      <div class="card-body">Max <strong>5 months + 10 days</strong> from the visit date. Older chart notes won't qualify. If expired, ask for a new office visit or more recent notes.</div>
+    </div>
+    <div class="info-card">
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <div class="card-title">Both Required</div>
+      <div class="card-body">Having only the DO or only the CN is <strong>not enough</strong>. Both must be present, within date, and accurate before submitting to the client.</div>
+    </div>
   </div>
 </div>
 
 </div><!-- /slides-wrapper -->
 
-<!-- ══════════════════════════════════════════
-     NAVIGATION PILL
-══════════════════════════════════════════ -->
-<div class="nav-pill" id="navPill" data-theme="stone">
+<!-- ══ NAV PILL ══ -->
+<div class="nav-pill" id="navPill">
   <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
   <div class="nav-dots" id="navDots"></div>
-  <span class="nav-counter" id="navCounter">1 / 11</span>
+  <span class="nav-counter" id="navCounter">1 / 15</span>
   <button class="nav-btn" id="nextBtn" onclick="navigate(1)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
   </button>
@@ -992,114 +1144,109 @@ tr:hover td { background:var(--card-hover); }
 
 <script>
 (function(){
+  /* ── theme → background mapping ── */
+  const BG = {
+    s01:'radial-gradient(ellipse 120% 70% at 60% 5%,#c9b99a28 0%,transparent 55%),radial-gradient(ellipse 80% 90% at 5% 90%,#8a7a5a18 0%,transparent 55%),linear-gradient(158deg,#0f0e0c,#1a1815,#22201c)',
+    s02:'radial-gradient(ellipse 110% 65% at 70% 8%,#d4943228 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#7c4c1820 0%,transparent 55%),linear-gradient(155deg,#130f09,#201810,#2a2016)',
+    s03:'radial-gradient(ellipse 100% 60% at 65% 10%,#b0a08828 0%,transparent 55%),radial-gradient(ellipse 70% 85% at 10% 85%,#60584820 0%,transparent 55%),linear-gradient(152deg,#0e0d0c,#1c1a18,#262320)',
+    s04:'radial-gradient(ellipse 110% 65% at 68% 8%,#c8a03830 0%,transparent 55%),radial-gradient(ellipse 80% 90% at 5% 90%,#6e5a1820 0%,transparent 55%),linear-gradient(155deg,#100e08,#1e1b10,#282418)',
+    s05:'radial-gradient(ellipse 110% 65% at 65% 8%,#8aa0b028 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#30405020 0%,transparent 55%),linear-gradient(155deg,#0d0f10,#181c1e,#202428)',
+    s06:'radial-gradient(ellipse 110% 65% at 68% 8%,#a0705028 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#58301820 0%,transparent 55%),linear-gradient(155deg,#110c0a,#1e1510,#281c16)',
+    s07:'radial-gradient(ellipse 110% 65% at 65% 8%,#78a08028 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#30504020 0%,transparent 55%),linear-gradient(155deg,#0b0e0c,#141a16,#1c2420)',
+    s08:'radial-gradient(ellipse 110% 65% at 68% 8%,#9090c028 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#40405820 0%,transparent 55%),linear-gradient(155deg,#0c0c0e,#181820,#202028)',
+    s09:'radial-gradient(ellipse 110% 65% at 65% 8%,#c0909828 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#60303820 0%,transparent 55%),linear-gradient(155deg,#110c0e,#1e1418,#281820)',
+    s10:'radial-gradient(ellipse 110% 65% at 68% 8%,#b8906028 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#60483020 0%,transparent 55%),linear-gradient(155deg,#100e0a,#1c1810,#262018)',
+    s11:'radial-gradient(ellipse 110% 65% at 65% 8%,#6888a830 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#28384820 0%,transparent 55%),linear-gradient(155deg,#0a0e12,#141c24,#1c2430)',
+    s12:'radial-gradient(ellipse 100% 60% at 62% 8%,#c0b09828 0%,transparent 55%),radial-gradient(ellipse 70% 85% at 8% 88%,#5a504020 0%,transparent 55%),linear-gradient(153deg,#0d0c0a,#1a1816,#222020)',
+    s13:'radial-gradient(ellipse 110% 65% at 65% 8%,#a0b07028 0%,transparent 55%),radial-gradient(ellipse 75% 90% at 8% 88%,#50602820 0%,transparent 55%),linear-gradient(155deg,#0c0e0a,#181c12,#22261a)',
+    s14:'radial-gradient(ellipse 120% 70% at 60% 5%,#d4c8b030 0%,transparent 55%),radial-gradient(ellipse 80% 90% at 5% 90%,#8a7a5a20 0%,transparent 55%),linear-gradient(158deg,#0e0d0c,#1c1a18,#252220)',
+    s15:'radial-gradient(ellipse 120% 70% at 62% 5%,#c8b89030 0%,transparent 55%),radial-gradient(ellipse 80% 90% at 5% 90%,#80681820 0%,transparent 55%),linear-gradient(158deg,#0f0d0b,#1d1a15,#26221c)',
+  };
+
   const slides   = Array.from(document.querySelectorAll('.slide'));
   const bgLayer  = document.getElementById('bgLayer');
-  const navPill  = document.getElementById('navPill');
   const progFill = document.getElementById('progFill');
   const dotsEl   = document.getElementById('navDots');
   const total    = slides.length;
-  let cur = 0, isAnimating = false;
+  let cur = 0, busy = false;
 
-  /* ── BUILD DOTS ── */
+  /* accent colors for progress bar */
+  const ACCENT = {
+    s01:'#c9b99a',s02:'#d4943a',s03:'#b8a888',s04:'#c8a038',s05:'#90a8b8',
+    s06:'#c08870',s07:'#88b890',s08:'#9898c8',s09:'#c09098',s10:'#b89060',
+    s11:'#6888a8',s12:'#c0b098',s13:'#a0b070',s14:'#d4c8b0',s15:'#c8b890',
+  };
+
+  /* build dots */
   slides.forEach((_,i) => {
     const d = document.createElement('button');
     d.className = 'nav-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label','Slide '+(i+1));
     d.addEventListener('click', () => goTo(i));
     dotsEl.appendChild(d);
   });
 
-  /* ── GET THEME ── */
-  function themeOf(idx) { return slides[idx].dataset.theme || 'stone'; }
+  function theme(idx) { return slides[idx].dataset.theme || 's01'; }
 
-  /* ── APPLY GLOBAL THEME (bg + nav pill) ── */
-  function applyTheme(theme) {
-    bgLayer.dataset.theme = theme;
-    navPill.dataset.theme = theme;
-    // Update progress bar color via inline CSS var
-    progFill.style.background = 'var(--accent)';
-    progFill.style.boxShadow  = '0 0 12px var(--glow)';
+  function applyBg(t) {
+    bgLayer.style.background = BG[t] || BG.s01;
+    progFill.style.background = ACCENT[t] || '#c9b99a';
+    progFill.style.boxShadow  = `0 0 10px ${ACCENT[t] || '#c9b99a'}50`;
   }
 
-  /* ── ACTIVATE ── */
   function activate(idx, dir) {
-    if (isAnimating) return;
-    isAnimating = true;
+    if (busy) return;
+    busy = true;
 
-    const leaving = slides[cur];
-    const entering = slides[idx];
-
-    // remove active from leaving (instant, no anim on leave)
-    leaving.classList.remove('active');
-
+    slides[cur].classList.remove('active');
     cur = idx;
-    const theme = themeOf(cur);
+    const t = theme(cur);
+    applyBg(t);
 
-    // Apply theme to bg
-    applyTheme(theme);
-    // Also apply theme to the entering slide's element for CSS var resolution
-    entering.setAttribute('data-theme', entering.dataset.theme);
+    const el = slides[cur];
+    el.classList.add('active');
+    el.classList.remove('enter-right','enter-left');
+    void el.offsetWidth;
+    el.classList.add(dir > 0 ? 'enter-right' : 'enter-left');
+    el.scrollTop = 0;
 
-    // Enter animation direction
-    entering.classList.add('active');
-    entering.classList.remove('enter-right','enter-left');
-    void entering.offsetWidth; // reflow
-    entering.classList.add(dir > 0 ? 'enter-right' : 'enter-left');
-    entering.scrollTop = 0;
-
-    // Reset .fu elements for re-animation
-    entering.querySelectorAll('.fu').forEach(el => {
-      el.style.animation = 'none';
-      void el.offsetWidth;
-      el.style.animation = '';
+    /* restart fu animations */
+    el.querySelectorAll('.fu').forEach(f => {
+      f.style.animation = 'none'; void f.offsetWidth; f.style.animation = '';
     });
 
-    // Update progress
-    progFill.style.width = ((cur / (total-1)) * 100) + '%';
+    /* progress */
+    progFill.style.width = (cur / (total - 1) * 100) + '%';
 
-    // Update dots
+    /* dots */
     dotsEl.querySelectorAll('.nav-dot').forEach((d,i) => d.classList.toggle('active', i===cur));
 
-    // Update counter
+    /* counter + buttons */
     document.getElementById('navCounter').textContent = (cur+1)+' / '+total;
-
-    // Update buttons
     document.getElementById('prevBtn').disabled = cur===0;
     document.getElementById('nextBtn').disabled = cur===total-1;
 
-    setTimeout(() => isAnimating = false, 600);
+    setTimeout(() => busy = false, 580);
   }
 
-  window.navigate = function(dir) {
-    const next = cur + dir;
-    if (next >= 0 && next < total) activate(next, dir);
-  };
+  window.navigate = d => { const n = cur+d; if(n>=0&&n<total) activate(n,d); };
+  window.goTo     = i => { if(i!==cur) activate(i, i>cur?1:-1); };
 
-  window.goTo = function(idx) {
-    if (idx !== cur) activate(idx, idx > cur ? 1 : -1);
-  };
-
-  /* ── KEYBOARD ── */
   document.addEventListener('keydown', e => {
-    if (e.key==='ArrowRight'||e.key==='ArrowDown') navigate(1);
-    if (e.key==='ArrowLeft' ||e.key==='ArrowUp')   navigate(-1);
+    if(e.key==='ArrowRight'||e.key==='ArrowDown') navigate(1);
+    if(e.key==='ArrowLeft' ||e.key==='ArrowUp')   navigate(-1);
   });
 
-  /* ── TOUCH SWIPE ── */
   let tx = null;
   document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
   document.addEventListener('touchend',   e => {
-    if (tx===null) return;
-    const dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 48) navigate(dx < 0 ? 1 : -1);
+    if(tx===null) return;
+    if(Math.abs(e.changedTouches[0].clientX - tx) > 48) navigate(e.changedTouches[0].clientX < tx ? 1 : -1);
     tx = null;
   }, {passive:true});
 
-  /* ── INIT ── */
-  applyTheme(themeOf(0));
-  progFill.style.width = (100/(total-1)*0)+'%'; // 0 on cover... set to first position
-  // Actually set to 1/11 position visually
-  setTimeout(() => { progFill.style.width = '0%'; }, 10);
+  /* init */
+  applyBg(theme(0));
+  progFill.style.width = '0%';
 })();
 </script>
 </body>
